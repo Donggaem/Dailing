@@ -11,13 +11,13 @@
 		EB8C4621293349CC00FEEFD1 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8C4620293349CC00FEEFD1 /* Map.storyboard */; };
 		EB8C4623293349D500FEEFD1 /* Upload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8C4622293349D500FEEFD1 /* Upload.storyboard */; };
 		EB8C4626293349E700FEEFD1 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8C4625293349E700FEEFD1 /* Calendar.storyboard */; };
-		EB8C462829334A1A00FEEFD1 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C462729334A1A00FEEFD1 /* AddUserViewController.swift */; };
 		EB8C462A29334A2800FEEFD1 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C462929334A2800FEEFD1 /* CalendarViewController.swift */; };
 		EB8C462C29334A3000FEEFD1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C462B29334A3000FEEFD1 /* MapViewController.swift */; };
 		EB8C462E29334A3A00FEEFD1 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C462D29334A3A00FEEFD1 /* UploadViewController.swift */; };
 		EB8C463129334BB800FEEFD1 /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB8C463029334BB800FEEFD1 /* UserCollectionViewCell.xib */; };
 		EB8C463729334CF500FEEFD1 /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C463629334CF500FEEFD1 /* UserCollectionViewCell.swift */; };
 		EB8C463929334E7500FEEFD1 /* Controller+Extenction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C463829334E7500FEEFD1 /* Controller+Extenction.swift */; };
+		EB8C463B293353C500FEEFD1 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C463A293353C500FEEFD1 /* AddUserViewController.swift */; };
 		EBB240452930A0C000C0F6C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB240442930A0C000C0F6C3 /* AppDelegate.swift */; };
 		EBB240472930A0C000C0F6C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB240462930A0C000C0F6C3 /* SceneDelegate.swift */; };
 		EBB2404C2930A0C000C0F6C3 /* AddUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB2404A2930A0C000C0F6C3 /* AddUser.storyboard */; };
@@ -32,13 +32,13 @@
 		EB8C4620293349CC00FEEFD1 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		EB8C4622293349D500FEEFD1 /* Upload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Upload.storyboard; sourceTree = "<group>"; };
 		EB8C4625293349E700FEEFD1 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
-		EB8C462729334A1A00FEEFD1 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
 		EB8C462929334A2800FEEFD1 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		EB8C462B29334A3000FEEFD1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EB8C462D29334A3A00FEEFD1 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		EB8C463029334BB800FEEFD1 /* UserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCollectionViewCell.xib; sourceTree = "<group>"; };
 		EB8C463629334CF500FEEFD1 /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
 		EB8C463829334E7500FEEFD1 /* Controller+Extenction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controller+Extenction.swift"; sourceTree = "<group>"; };
+		EB8C463A293353C500FEEFD1 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
 		EBB240412930A0C000C0F6C3 /* Dailing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB240442930A0C000C0F6C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBB240462930A0C000C0F6C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		EB8C461C2933499100FEEFD1 /* AddUser */ = {
 			isa = PBXGroup;
 			children = (
-				EB8C462729334A1A00FEEFD1 /* AddUserViewController.swift */,
+				EB8C463A293353C500FEEFD1 /* AddUserViewController.swift */,
 			);
 			path = AddUser;
 			sourceTree = "<group>";
@@ -320,9 +320,9 @@
 				EB8C462A29334A2800FEEFD1 /* CalendarViewController.swift in Sources */,
 				EB8C463729334CF500FEEFD1 /* UserCollectionViewCell.swift in Sources */,
 				EB8C462E29334A3A00FEEFD1 /* UploadViewController.swift in Sources */,
-				EB8C462829334A1A00FEEFD1 /* AddUserViewController.swift in Sources */,
 				EBB240452930A0C000C0F6C3 /* AppDelegate.swift in Sources */,
 				EB8C462C29334A3000FEEFD1 /* MapViewController.swift in Sources */,
+				EB8C463B293353C500FEEFD1 /* AddUserViewController.swift in Sources */,
 				EB8C463929334E7500FEEFD1 /* Controller+Extenction.swift in Sources */,
 				EBB240472930A0C000C0F6C3 /* SceneDelegate.swift in Sources */,
 			);
