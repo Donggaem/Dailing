@@ -7,20 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8AAEA1A11C43E41CFAB5A75B /* Pods_Dailing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E35B5983024C95207E95355 /* Pods_Dailing.framework */; };
+		EB8C4621293349CC00FEEFD1 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8C4620293349CC00FEEFD1 /* Map.storyboard */; };
+		EB8C4623293349D500FEEFD1 /* Upload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8C4622293349D500FEEFD1 /* Upload.storyboard */; };
+		EB8C4626293349E700FEEFD1 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8C4625293349E700FEEFD1 /* Calendar.storyboard */; };
+		EB8C462829334A1A00FEEFD1 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C462729334A1A00FEEFD1 /* AddUserViewController.swift */; };
+		EB8C462A29334A2800FEEFD1 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C462929334A2800FEEFD1 /* CalendarViewController.swift */; };
+		EB8C462C29334A3000FEEFD1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C462B29334A3000FEEFD1 /* MapViewController.swift */; };
+		EB8C462E29334A3A00FEEFD1 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C462D29334A3A00FEEFD1 /* UploadViewController.swift */; };
+		EB8C463129334BB800FEEFD1 /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB8C463029334BB800FEEFD1 /* UserCollectionViewCell.xib */; };
+		EB8C463729334CF500FEEFD1 /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C463629334CF500FEEFD1 /* UserCollectionViewCell.swift */; };
+		EB8C463929334E7500FEEFD1 /* Controller+Extenction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C463829334E7500FEEFD1 /* Controller+Extenction.swift */; };
 		EBB240452930A0C000C0F6C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB240442930A0C000C0F6C3 /* AppDelegate.swift */; };
 		EBB240472930A0C000C0F6C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB240462930A0C000C0F6C3 /* SceneDelegate.swift */; };
-		EBB240492930A0C000C0F6C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB240482930A0C000C0F6C3 /* ViewController.swift */; };
-		EBB2404C2930A0C000C0F6C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB2404A2930A0C000C0F6C3 /* Main.storyboard */; };
+		EBB2404C2930A0C000C0F6C3 /* AddUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB2404A2930A0C000C0F6C3 /* AddUser.storyboard */; };
 		EBB2404E2930A0C100C0F6C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB2404D2930A0C100C0F6C3 /* Assets.xcassets */; };
 		EBB240512930A0C100C0F6C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB2404F2930A0C100C0F6C3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44B37E297A9DFE60987D0684 /* Pods-Dailing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dailing.release.xcconfig"; path = "Target Support Files/Pods-Dailing/Pods-Dailing.release.xcconfig"; sourceTree = "<group>"; };
+		4E35B5983024C95207E95355 /* Pods_Dailing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dailing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8F6D301ECA78E4620BD97D /* Pods-Dailing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dailing.debug.xcconfig"; path = "Target Support Files/Pods-Dailing/Pods-Dailing.debug.xcconfig"; sourceTree = "<group>"; };
+		EB8C4620293349CC00FEEFD1 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		EB8C4622293349D500FEEFD1 /* Upload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Upload.storyboard; sourceTree = "<group>"; };
+		EB8C4625293349E700FEEFD1 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		EB8C462729334A1A00FEEFD1 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		EB8C462929334A2800FEEFD1 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		EB8C462B29334A3000FEEFD1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		EB8C462D29334A3A00FEEFD1 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		EB8C463029334BB800FEEFD1 /* UserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCollectionViewCell.xib; sourceTree = "<group>"; };
+		EB8C463629334CF500FEEFD1 /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		EB8C463829334E7500FEEFD1 /* Controller+Extenction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controller+Extenction.swift"; sourceTree = "<group>"; };
 		EBB240412930A0C000C0F6C3 /* Dailing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB240442930A0C000C0F6C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBB240462930A0C000C0F6C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EBB240482930A0C000C0F6C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EBB2404B2930A0C000C0F6C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EBB2404B2930A0C000C0F6C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AddUser.storyboard; sourceTree = "<group>"; };
 		EBB2404D2930A0C100C0F6C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBB240502930A0C100C0F6C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBB240522930A0C100C0F6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,17 +53,128 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AAEA1A11C43E41CFAB5A75B /* Pods_Dailing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		869399F8DC8F2099E04FFF06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E35B5983024C95207E95355 /* Pods_Dailing.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2D054AB9433D7CF4271D64E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB8F6D301ECA78E4620BD97D /* Pods-Dailing.debug.xcconfig */,
+				44B37E297A9DFE60987D0684 /* Pods-Dailing.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EB8C4618293348AF00FEEFD1 /* BaseFile */ = {
+			isa = PBXGroup;
+			children = (
+				EBB2404D2930A0C100C0F6C3 /* Assets.xcassets */,
+				EBB2404F2930A0C100C0F6C3 /* LaunchScreen.storyboard */,
+				EBB240442930A0C000C0F6C3 /* AppDelegate.swift */,
+				EBB240462930A0C000C0F6C3 /* SceneDelegate.swift */,
+				EB8C463829334E7500FEEFD1 /* Controller+Extenction.swift */,
+			);
+			path = BaseFile;
+			sourceTree = "<group>";
+		};
+		EB8C4619293348E600FEEFD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB8C4624293349DA00FEEFD1 /* Cell */,
+				EBB2404A2930A0C000C0F6C3 /* AddUser.storyboard */,
+				EB8C4625293349E700FEEFD1 /* Calendar.storyboard */,
+				EB8C4620293349CC00FEEFD1 /* Map.storyboard */,
+				EB8C4622293349D500FEEFD1 /* Upload.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EB8C461A293348ED00FEEFD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB8C461B293348F300FEEFD1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EB8C462F29334A4200FEEFD1 /* Cell */,
+				EB8C461F293349B900FEEFD1 /* Upload */,
+				EB8C461E293349AB00FEEFD1 /* Map */,
+				EB8C461D2933499900FEEFD1 /* Calendar */,
+				EB8C461C2933499100FEEFD1 /* AddUser */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EB8C461C2933499100FEEFD1 /* AddUser */ = {
+			isa = PBXGroup;
+			children = (
+				EB8C462729334A1A00FEEFD1 /* AddUserViewController.swift */,
+			);
+			path = AddUser;
+			sourceTree = "<group>";
+		};
+		EB8C461D2933499900FEEFD1 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				EB8C462929334A2800FEEFD1 /* CalendarViewController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		EB8C461E293349AB00FEEFD1 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				EB8C462B29334A3000FEEFD1 /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		EB8C461F293349B900FEEFD1 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				EB8C462D29334A3A00FEEFD1 /* UploadViewController.swift */,
+			);
+			path = Upload;
+			sourceTree = "<group>";
+		};
+		EB8C4624293349DA00FEEFD1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EB8C463029334BB800FEEFD1 /* UserCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EB8C462F29334A4200FEEFD1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EB8C463629334CF500FEEFD1 /* UserCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		EBB240382930A0C000C0F6C3 = {
 			isa = PBXGroup;
 			children = (
 				EBB240432930A0C000C0F6C3 /* Dailing */,
 				EBB240422930A0C000C0F6C3 /* Products */,
+				B2D054AB9433D7CF4271D64E /* Pods */,
+				869399F8DC8F2099E04FFF06 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +189,10 @@
 		EBB240432930A0C000C0F6C3 /* Dailing */ = {
 			isa = PBXGroup;
 			children = (
-				EBB240442930A0C000C0F6C3 /* AppDelegate.swift */,
-				EBB240462930A0C000C0F6C3 /* SceneDelegate.swift */,
-				EBB240482930A0C000C0F6C3 /* ViewController.swift */,
-				EBB2404A2930A0C000C0F6C3 /* Main.storyboard */,
-				EBB2404D2930A0C100C0F6C3 /* Assets.xcassets */,
-				EBB2404F2930A0C100C0F6C3 /* LaunchScreen.storyboard */,
+				EB8C461B293348F300FEEFD1 /* Controller */,
+				EB8C461A293348ED00FEEFD1 /* Model */,
+				EB8C4619293348E600FEEFD1 /* View */,
+				EB8C4618293348AF00FEEFD1 /* BaseFile */,
 				EBB240522930A0C100C0F6C3 /* Info.plist */,
 			);
 			path = Dailing;
@@ -74,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBB240552930A0C100C0F6C3 /* Build configuration list for PBXNativeTarget "Dailing" */;
 			buildPhases = (
+				5E84779EB6BA8F150E9F02C2 /* [CP] Check Pods Manifest.lock */,
 				EBB2403D2930A0C000C0F6C3 /* Sources */,
 				EBB2403E2930A0C000C0F6C3 /* Frameworks */,
 				EBB2403F2930A0C000C0F6C3 /* Resources */,
+				09D050B63F6F50211059EFF6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,21 +258,72 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB8C4626293349E700FEEFD1 /* Calendar.storyboard in Resources */,
+				EB8C463129334BB800FEEFD1 /* UserCollectionViewCell.xib in Resources */,
+				EB8C4623293349D500FEEFD1 /* Upload.storyboard in Resources */,
 				EBB240512930A0C100C0F6C3 /* LaunchScreen.storyboard in Resources */,
 				EBB2404E2930A0C100C0F6C3 /* Assets.xcassets in Resources */,
-				EBB2404C2930A0C000C0F6C3 /* Main.storyboard in Resources */,
+				EBB2404C2930A0C000C0F6C3 /* AddUser.storyboard in Resources */,
+				EB8C4621293349CC00FEEFD1 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09D050B63F6F50211059EFF6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dailing/Pods-Dailing-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dailing/Pods-Dailing-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dailing/Pods-Dailing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E84779EB6BA8F150E9F02C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dailing-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EBB2403D2930A0C000C0F6C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBB240492930A0C000C0F6C3 /* ViewController.swift in Sources */,
+				EB8C462A29334A2800FEEFD1 /* CalendarViewController.swift in Sources */,
+				EB8C463729334CF500FEEFD1 /* UserCollectionViewCell.swift in Sources */,
+				EB8C462E29334A3A00FEEFD1 /* UploadViewController.swift in Sources */,
+				EB8C462829334A1A00FEEFD1 /* AddUserViewController.swift in Sources */,
 				EBB240452930A0C000C0F6C3 /* AppDelegate.swift in Sources */,
+				EB8C462C29334A3000FEEFD1 /* MapViewController.swift in Sources */,
+				EB8C463929334E7500FEEFD1 /* Controller+Extenction.swift in Sources */,
 				EBB240472930A0C000C0F6C3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,12 +331,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EBB2404A2930A0C000C0F6C3 /* Main.storyboard */ = {
+		EBB2404A2930A0C000C0F6C3 /* AddUser.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EBB2404B2930A0C000C0F6C3 /* Base */,
 			);
-			name = Main.storyboard;
+			name = AddUser.storyboard;
 			sourceTree = "<group>";
 		};
 		EBB2404F2930A0C100C0F6C3 /* LaunchScreen.storyboard */ = {
@@ -282,6 +466,7 @@
 		};
 		EBB240562930A0C100C0F6C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB8F6D301ECA78E4620BD97D /* Pods-Dailing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +495,7 @@
 		};
 		EBB240572930A0C100C0F6C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44B37E297A9DFE60987D0684 /* Pods-Dailing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
