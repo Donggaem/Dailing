@@ -1,0 +1,6 @@
+framework module Pods_Dailing {
+  umbrella header "Pods-Dailing-umbrella.h"
+
+  export *
+  module * { export * }
+}
