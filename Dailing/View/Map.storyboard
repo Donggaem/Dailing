@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
+        <!--Item-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="Y6W-OH-hqX" customClass="MapViewController" customModule="Dailing" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,18 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="맵" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wem-46-3nK">
-                                <rect key="frame" x="178" y="398" width="35" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBr-T6-kA3">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mBr-T6-kA3" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="39Q-6Z-DEV"/>
+                            <constraint firstItem="mBr-T6-kA3" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="HQE-d2-tQR"/>
+                            <constraint firstItem="mBr-T6-kA3" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="IXe-s5-NKR"/>
+                            <constraint firstItem="mBr-T6-kA3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="PHv-lQ-zgg"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ojw-fO-3xn"/>
                     <navigationItem key="navigationItem" id="bm3-Yj-5v1"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="subView" destination="mBr-T6-kA3" id="mvo-LN-VJO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

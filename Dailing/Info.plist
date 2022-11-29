@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>inter-cufonfonts/Inter-SemiBold.otf</string>
+		<string>inter-cufonfonts/Inter-Regular.otf</string>
+		<string>inter-cufonfonts/Inter-Black.otf</string>
+	</array>
 	<key>KAKAO_APP_KEY</key>
 	<string>b0ec72d3c4f90ec62c6754ac6f158e57</string>
 	<key>UIApplicationSceneManifest</key>
