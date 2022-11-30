@@ -59,6 +59,7 @@
 		EBB2404C2930A0C000C0F6C3 /* AddUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB2404A2930A0C000C0F6C3 /* AddUser.storyboard */; };
 		EBB2404E2930A0C100C0F6C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB2404D2930A0C100C0F6C3 /* Assets.xcassets */; };
 		EBB240512930A0C100C0F6C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB2404F2930A0C100C0F6C3 /* LaunchScreen.storyboard */; };
+		EBDC213029373910006D9B0D /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDC212F29373910006D9B0D /* TabBarVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -140,6 +141,7 @@
 		EBB2404D2930A0C100C0F6C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBB240502930A0C100C0F6C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBB240522930A0C100C0F6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBDC212F29373910006D9B0D /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +286,7 @@
 				EB8C461E293349AB00FEEFD1 /* Map */,
 				EB8C461D2933499900FEEFD1 /* Calendar */,
 				EB8C461C2933499100FEEFD1 /* AddUser */,
+				EBDC212F29373910006D9B0D /* TabBarVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				EB8C463729334CF500FEEFD1 /* UserCollectionViewCell.swift in Sources */,
 				EB8C462E29334A3A00FEEFD1 /* UploadViewController.swift in Sources */,
 				EBB240452930A0C000C0F6C3 /* AppDelegate.swift in Sources */,
+				EBDC213029373910006D9B0D /* TabBarVC.swift in Sources */,
 				EB8C462C29334A3000FEEFD1 /* MapViewController.swift in Sources */,
 				EB8C463B293353C500FEEFD1 /* AddUserViewController.swift in Sources */,
 				EB8C463929334E7500FEEFD1 /* Controller+Extenction.swift in Sources */,

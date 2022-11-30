@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XJC-ZG-tVX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hNC-v5-pry">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -13,10 +13,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="CalendarViewController" id="Y6W-OH-hqX" customClass="CalendarViewController" customModule="Dailing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,45 +85,36 @@
                             <constraint firstItem="EnH-nZ-T6c" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ypg-bh-kZg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="eY8-of-YaF"/>
                     <navigationItem key="navigationItem" id="DYD-6J-G3E"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="caledarBackgroundView" destination="Bl6-53-5Bm" id="fZa-tj-eVd"/>
-                        <outlet property="calendarView" destination="1s8-fD-AVk" id="RkF-Lx-cfj"/>
-                        <outlet property="dayLabel" destination="4UX-Mz-R9o" id="G4g-LR-3An"/>
-                        <outlet property="monthLabel" destination="8ah-Nj-zJM" id="OIq-NG-dza"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1856.9230769230769" y="-198.34123222748815"/>
+            <point key="canvasLocation" x="3223" y="-180"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab BarVC-->
         <scene sceneID="bZt-zh-XqP">
             <objects>
-                <tabBarController storyboardIdentifier="CalendarNav" automaticallyAdjustsScrollViewInsets="NO" id="XJC-ZG-tVX" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarVC" automaticallyAdjustsScrollViewInsets="NO" id="XJC-ZG-tVX" customClass="TabBarVC" customModule="Dailing" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sst-kh-Scd">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="hNC-v5-pry" kind="relationship" relationship="viewControllers" id="gwK-hp-xOo"/>
-                        <segue destination="yiM-Zu-mFu" kind="relationship" relationship="viewControllers" id="5xS-fs-PPE"/>
-                        <segue destination="j7x-Sg-55k" kind="relationship" relationship="viewControllers" id="Fjk-WB-rAJ"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozg-ha-tSu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="56.92307692307692" y="-2.1327014218009479"/>
+            <point key="canvasLocation" x="-149" y="3"/>
         </scene>
         <!--Item-->
         <scene sceneID="pn2-hM-YaQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hNC-v5-pry" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="calendar.circle" catalog="system" selectedImage="calendar.circle.fill" id="J1S-cE-WHP"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="J1S-cE-WHP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wd6-W4-jhU">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
@@ -131,12 +122,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="98A-fz-3dP"/>
+                        <segue destination="DUF-Hw-ytN" kind="relationship" relationship="rootViewController" id="ags-ea-6X2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xLx-A3-p8N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="954" y="-198"/>
+            <point key="canvasLocation" x="958" y="-198"/>
         </scene>
         <!--Map-->
         <scene sceneID="2gr-8R-qDh">
@@ -158,10 +149,90 @@
             </objects>
             <point key="canvasLocation" x="907" y="205"/>
         </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="vf0-Jj-Dpy">
+            <objects>
+                <viewController storyboardIdentifier="CalendarViewController" id="DUF-Hw-ytN" customClass="CalendarViewController" customModule="Dailing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qKM-JW-jRk">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="5lm-9c-W8X">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="414" id="KQ5-E6-oQ1"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3k1-lJ-WEz" userLabel="Month">
+                                <rect key="frame" x="29.999999999999996" y="56" width="59.666666666666657" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="QUS-6E-UFT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Inter-Black" family="Inter" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfD-n0-G2R" userLabel="DayView">
+                                <rect key="frame" x="0.0" y="414" width="390" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgv-hM-fRX" userLabel="DAy">
+                                        <rect key="frame" x="19.999999999999996" y="18" width="51.666666666666657" height="23"/>
+                                        <fontDescription key="fontDescription" name="Inter-Black" family="Inter" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="FNa-Wx-KzG"/>
+                                    <constraint firstItem="hgv-hM-fRX" firstAttribute="leading" secondItem="qfD-n0-G2R" secondAttribute="leading" constant="20" id="dxs-sa-OLm"/>
+                                    <constraint firstItem="hgv-hM-fRX" firstAttribute="top" secondItem="qfD-n0-G2R" secondAttribute="top" constant="18" id="x4A-vW-iFJ"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PiE-oU-BEd">
+                                <rect key="frame" x="0.0" y="474" width="390" height="287"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="trA-ac-5E8" customClass="FSCalendar">
+                                <rect key="frame" x="29" y="105" width="332" height="284"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gRz-2U-oXI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5lm-9c-W8X" firstAttribute="trailing" secondItem="qKM-JW-jRk" secondAttribute="trailing" id="4VS-T3-0NH"/>
+                            <constraint firstItem="3k1-lJ-WEz" firstAttribute="top" secondItem="qKM-JW-jRk" secondAttribute="top" constant="56" id="9qx-sz-thn"/>
+                            <constraint firstItem="gRz-2U-oXI" firstAttribute="trailing" secondItem="trA-ac-5E8" secondAttribute="trailing" constant="29" id="APJ-CR-ksy"/>
+                            <constraint firstItem="qfD-n0-G2R" firstAttribute="top" secondItem="5lm-9c-W8X" secondAttribute="bottom" id="HYu-Qc-tQp"/>
+                            <constraint firstItem="trA-ac-5E8" firstAttribute="top" secondItem="3k1-lJ-WEz" secondAttribute="bottom" constant="22" id="PVo-nF-Lci"/>
+                            <constraint firstItem="5lm-9c-W8X" firstAttribute="leading" secondItem="gRz-2U-oXI" secondAttribute="leading" id="S1K-GM-7HW"/>
+                            <constraint firstItem="5lm-9c-W8X" firstAttribute="top" secondItem="qKM-JW-jRk" secondAttribute="top" id="S9q-k6-UHT"/>
+                            <constraint firstItem="qfD-n0-G2R" firstAttribute="top" secondItem="trA-ac-5E8" secondAttribute="bottom" constant="25" id="UMr-Sf-o4I"/>
+                            <constraint firstItem="3k1-lJ-WEz" firstAttribute="leading" secondItem="gRz-2U-oXI" secondAttribute="leading" constant="30" id="byn-eI-iEB"/>
+                            <constraint firstItem="PiE-oU-BEd" firstAttribute="leading" secondItem="gRz-2U-oXI" secondAttribute="leading" id="crJ-k8-XEN"/>
+                            <constraint firstItem="qfD-n0-G2R" firstAttribute="trailing" secondItem="gRz-2U-oXI" secondAttribute="trailing" id="euO-qG-OGq"/>
+                            <constraint firstItem="qfD-n0-G2R" firstAttribute="leading" secondItem="gRz-2U-oXI" secondAttribute="leading" id="fTv-v6-chf"/>
+                            <constraint firstItem="PiE-oU-BEd" firstAttribute="trailing" secondItem="gRz-2U-oXI" secondAttribute="trailing" id="lJc-mP-w9T"/>
+                            <constraint firstItem="trA-ac-5E8" firstAttribute="leading" secondItem="gRz-2U-oXI" secondAttribute="leading" constant="29" id="mVd-b4-KOy"/>
+                            <constraint firstItem="PiE-oU-BEd" firstAttribute="bottom" secondItem="gRz-2U-oXI" secondAttribute="bottom" id="ram-Eu-BpB"/>
+                            <constraint firstItem="PiE-oU-BEd" firstAttribute="top" secondItem="qfD-n0-G2R" secondAttribute="bottom" id="sBg-Pq-KS8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Re-mx-Ou1"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="calendarView" destination="trA-ac-5E8" id="xYN-4r-zYb"/>
+                        <outlet property="dayLabel" destination="hgv-hM-fRX" id="ROk-GG-krQ"/>
+                        <outlet property="monthLabel" destination="3k1-lJ-WEz" id="Gfc-hR-ZeS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cbe-If-ulY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1842" y="-198"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="calendar.circle" catalog="system" width="128" height="123"/>
-        <image name="calendar.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="back" width="473" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

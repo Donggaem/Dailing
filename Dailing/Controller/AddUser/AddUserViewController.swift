@@ -66,7 +66,7 @@ extension AddUserViewController: UICollectionViewDataSource, UICollectionViewDel
  
         } else {
             let storyBoard = UIStoryboard(name: "Calendar", bundle: nil)
-            let homeNav = storyBoard.instantiateViewController(identifier: "CalendarNav")
+            let homeNav = storyBoard.instantiateViewController(identifier: "TabBarVC")
             self.changeRootViewController(homeNav)
         }
         

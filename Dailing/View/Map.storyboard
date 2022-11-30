@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Map View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="Y6W-OH-hqX" customClass="MapViewController" customModule="Dailing" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,6 @@
                             <constraint firstItem="mBr-T6-kA3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="PHv-lQ-zgg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ojw-fO-3xn"/>
                     <navigationItem key="navigationItem" id="bm3-Yj-5v1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -45,7 +44,7 @@
         <scene sceneID="Qiz-mf-eLC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cWz-jq-Nt3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="location.circle" catalog="system" selectedImage="location.circle.fill" id="Uz6-qC-tWT"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="oiL-Az-uI3"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pRf-QG-5De">
@@ -63,8 +62,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="location.circle" catalog="system" width="128" height="123"/>
-        <image name="location.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

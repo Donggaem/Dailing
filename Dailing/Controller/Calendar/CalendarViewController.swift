@@ -9,8 +9,6 @@ import UIKit
 import FSCalendar
 
 class CalendarViewController: UIViewController {
-
-    @IBOutlet var caledarBackgroundView: UIView!
     
     @IBOutlet var calendarView: FSCalendar!
     @IBOutlet var monthLabel: UILabel!
@@ -53,23 +51,7 @@ class CalendarViewController: UIViewController {
         
         setCalendar()
         
-        //CAGradientLayer 생성
-        let layerCB = CAGradientLayer()
-        layerCB.bounds = caledarBackgroundView.bounds.insetBy(dx: -0.5*caledarBackgroundView.bounds.size.width, dy: -0.5*caledarBackgroundView.bounds.size.height)
-        layerCB.position = caledarBackgroundView.center
-        //색상설정
-        let colors: [CGColor] = [
-          UIColor(red: 1, green: 0.628, blue: 0.56, alpha: 0.56).cgColor,
-          UIColor(red: 1, green: 0.501, blue: 0.485, alpha: 0.75).cgColor
-        ]
-        layerCB.colors = colors
-
-        layerCB.locations = [0, 1] //정지위치
-        layerCB.startPoint = CGPoint(x: 0.25, y: 0.5) //시작점
-        layerCB.endPoint = CGPoint(x: 0.75, y: 0.5) //끝점
-        layerCB.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: 0, b: 1, c: -1, d: 0, tx: 1, ty: 0)) //모양
         
-//        caledarBackgroundView.layer.addSublayer(layerCB) //적용
     }
     
 }
