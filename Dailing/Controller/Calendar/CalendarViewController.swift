@@ -14,6 +14,7 @@ class CalendarViewController: UIViewController {
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var dayLabel: UILabel!
     
+    @IBOutlet var calendarHeight: NSLayoutConstraint!
     private var selectedDate = ""
     
     //날짜 포맷
@@ -26,10 +27,22 @@ class CalendarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUI()
+        setCalendar()
+        
     }
-
+    
+    //캘린더 스와이프 액션
+    @objc func swipeEvent(_ swipe: UISwipeGestureRecognizer) {
+        
+        if swipe.direction == .up {
+            calendarView.setScope(.week, animated: true)
+        } else if swipe.direction == .down {
+            calendarView.setScope(.month, animated: true)
+        }
+    }
+    
     private func setUI() {
         
         self.view.bringSubviewToFront(calendarView)
@@ -48,16 +61,33 @@ class CalendarViewController: UIViewController {
         //CalendarView
         self.calendarView.delegate = self
         self.calendarView.dataSource = self
+
+        //스와이프 액션
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swipeEvent(_:)))
+        swipeUp.direction = .up
+        self.view.addGestureRecognizer(swipeUp)
         
-        setCalendar()
-        
-        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(swipeEvent(_:)))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
     }
     
 }
 
 //MARK:
 extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+    
+    //캘린더 높이 액션
+    func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
+        
+        calendarHeight.constant = bounds.height
+        
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    
     private func setCalendar() {
         
         calendarView.placeholderType = .none // 전,다음달 날짜 숨기기
@@ -103,35 +133,35 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         dayfotmatter.locale = Locale(identifier: "ko_KR")
         dayfotmatter.dateFormat = "dd.EE"
         dayLabel.text = dayfotmatter.string(from: date)
-
         
-//        todoTableView.reloadData()
-//        //        calendarView.reloadData()
-//        getTodo()
-//        print(selectedList)
+        
+        //        todoTableView.reloadData()
+        //        //        calendarView.reloadData()
+        //        getTodo()
+        //        print(selectedList)
     }
     
     private func setEvents(){
-//        events.removeAll()
-//
-//        for index in 0..<todoList.endIndex {
-//            let arr = todoList[index].date.components(separatedBy: "T00:00:00.000Z")
-//            events.append(arr[0])
-//        }
+        //        events.removeAll()
+        //
+        //        for index in 0..<todoList.endIndex {
+        //            let arr = todoList[index].date.components(separatedBy: "T00:00:00.000Z")
+        //            events.append(arr[0])
+        //        }
     }
     
-//    //이벤트 닷 표시갯수
-//    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-//
-//        setEvents()
-//        let eventformatter = DateFormatter()
-//        eventformatter.dateFormat = "yyyy-MM-dd"
-//        let eventDate = eventformatter.string(from: date)
-//
-//        if events.contains(eventDate) {
-//            return 1
-//        } else {
-//            return 0
-//        }
-//    }
+    //    //이벤트 닷 표시갯수
+    //    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+    //
+    //        setEvents()
+    //        let eventformatter = DateFormatter()
+    //        eventformatter.dateFormat = "yyyy-MM-dd"
+    //        let eventDate = eventformatter.string(from: date)
+    //
+    //        if events.contains(eventDate) {
+    //            return 1
+    //        } else {
+    //            return 0
+    //        }
+    //    }
 }
