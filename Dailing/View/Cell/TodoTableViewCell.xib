@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Regular.otf">
+            <string>Inter-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TodoTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0Gh-Jo-JIc" customClass="TodoTableViewCell" customModule="Dailing" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Gh-Jo-JIc" id="lfp-zo-bXO">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1T-E1-2Nl">
+                        <rect key="frame" x="29" y="5" width="8" height="8"/>
+                        <color key="backgroundColor" systemColor="linkColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="8" id="CWr-CA-fDk"/>
+                            <constraint firstAttribute="width" constant="8" id="moz-d4-wsB"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSa-Nc-ryk">
+                        <rect key="frame" x="53" y="1.6666666666666661" width="21" height="14.999999999999998"/>
+                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="12"/>
+                        <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBK-kH-URl">
+                        <rect key="frame" x="53" y="20.666666666666668" width="15.666666666666671" height="11"/>
+                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="9"/>
+                        <color key="textColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kSa-Nc-ryk" firstAttribute="centerY" secondItem="Q1T-E1-2Nl" secondAttribute="centerY" id="CTH-VL-vOI"/>
+                    <constraint firstItem="zBK-kH-URl" firstAttribute="leading" secondItem="kSa-Nc-ryk" secondAttribute="leading" id="FIL-E6-VZo"/>
+                    <constraint firstItem="Q1T-E1-2Nl" firstAttribute="leading" secondItem="lfp-zo-bXO" secondAttribute="leading" constant="29" id="Shs-cb-bst"/>
+                    <constraint firstItem="zBK-kH-URl" firstAttribute="top" secondItem="kSa-Nc-ryk" secondAttribute="bottom" constant="4" id="cXi-j4-RA3"/>
+                    <constraint firstItem="kSa-Nc-ryk" firstAttribute="leading" secondItem="Q1T-E1-2Nl" secondAttribute="trailing" constant="16" id="l1n-Vj-C64"/>
+                    <constraint firstItem="Q1T-E1-2Nl" firstAttribute="top" secondItem="lfp-zo-bXO" secondAttribute="top" constant="5" id="wt6-m9-WXh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dot" destination="Q1T-E1-2Nl" id="WOu-ET-z9T"/>
+                <outlet property="todoContent" destination="zBK-kH-URl" id="khT-pQ-aNA"/>
+                <outlet property="todoTitle" destination="kSa-Nc-ryk" id="X0R-eB-Pwb"/>
+            </connections>
+            <point key="canvasLocation" x="151.90839694656489" y="-6.3380281690140849"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

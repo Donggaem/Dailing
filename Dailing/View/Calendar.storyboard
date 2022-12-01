@@ -47,26 +47,6 @@
             </objects>
             <point key="canvasLocation" x="958" y="-198"/>
         </scene>
-        <!--Map-->
-        <scene sceneID="2gr-8R-qDh">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Map" id="j7x-Sg-55k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fe4-Os-z2R"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fi4-sk-hYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="894" y="304"/>
-        </scene>
-        <!--Upload-->
-        <scene sceneID="GeL-B7-rqV">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Upload" id="yiM-Zu-mFu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="5Yq-uB-Xc6"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZLS-Jk-Bbe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="907" y="205"/>
-        </scene>
         <!--Calendar View Controller-->
         <scene sceneID="vf0-Jj-Dpy">
             <objects>
@@ -146,6 +126,7 @@
                         <outlet property="calendarView" destination="trA-ac-5E8" id="xYN-4r-zYb"/>
                         <outlet property="dayLabel" destination="hgv-hM-fRX" id="ROk-GG-krQ"/>
                         <outlet property="monthLabel" destination="3k1-lJ-WEz" id="Gfc-hR-ZeS"/>
+                        <outlet property="todoTableView" destination="PiE-oU-BEd" id="pjz-ck-WgJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbe-If-ulY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

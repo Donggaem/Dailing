@@ -60,6 +60,10 @@
 		EBB2404E2930A0C100C0F6C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB2404D2930A0C100C0F6C3 /* Assets.xcassets */; };
 		EBB240512930A0C100C0F6C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB2404F2930A0C100C0F6C3 /* LaunchScreen.storyboard */; };
 		EBDC213029373910006D9B0D /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDC212F29373910006D9B0D /* TabBarVC.swift */; };
+		EBDC213229376779006D9B0D /* TodoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBDC213129376779006D9B0D /* TodoTableViewCell.xib */; };
+		EBDC213429376AB8006D9B0D /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDC213329376AB8006D9B0D /* TodoTableViewCell.swift */; };
+		EBF8A7B629387B4200207F84 /* TodoImgTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBF8A7B529387B4200207F84 /* TodoImgTableViewCell.xib */; };
+		EBF8A7B829387B5500207F84 /* TodoImgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8A7B729387B5500207F84 /* TodoImgTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -142,6 +146,10 @@
 		EBB240502930A0C100C0F6C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBB240522930A0C100C0F6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBDC212F29373910006D9B0D /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		EBDC213129376779006D9B0D /* TodoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTableViewCell.xib; sourceTree = "<group>"; };
+		EBDC213329376AB8006D9B0D /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
+		EBF8A7B529387B4200207F84 /* TodoImgTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoImgTableViewCell.xib; sourceTree = "<group>"; };
+		EBF8A7B729387B5500207F84 /* TodoImgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoImgTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +335,8 @@
 			isa = PBXGroup;
 			children = (
 				EB8C463029334BB800FEEFD1 /* UserCollectionViewCell.xib */,
+				EBDC213129376779006D9B0D /* TodoTableViewCell.xib */,
+				EBF8A7B529387B4200207F84 /* TodoImgTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -335,6 +345,8 @@
 			isa = PBXGroup;
 			children = (
 				EB8C463629334CF500FEEFD1 /* UserCollectionViewCell.swift */,
+				EBDC213329376AB8006D9B0D /* TodoTableViewCell.swift */,
+				EBF8A7B729387B5500207F84 /* TodoImgTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -456,6 +468,7 @@
 				EB488D062936249900AC0BE2 /* map_pin@3x.png in Resources */,
 				EB488D042936249900AC0BE2 /* map_pin_red@3x.png in Resources */,
 				EB488CFF2936249900AC0BE2 /* map_pin_custom@3x.png in Resources */,
+				EBDC213229376779006D9B0D /* TodoTableViewCell.xib in Resources */,
 				EBB2404E2930A0C100C0F6C3 /* Assets.xcassets in Resources */,
 				EB488D112936249900AC0BE2 /* noimage.png in Resources */,
 				EBB2404C2930A0C000C0F6C3 /* AddUser.storyboard in Resources */,
@@ -468,6 +481,7 @@
 				EB488D002936249900AC0BE2 /* map_pinup@3x.png in Resources */,
 				EB488D4B293632E200AC0BE2 /* inter-cufonfonts in Resources */,
 				EB488D072936249900AC0BE2 /* map_present_tracking.png in Resources */,
+				EBF8A7B629387B4200207F84 /* TodoImgTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,8 +537,10 @@
 				EB8C462A29334A2800FEEFD1 /* CalendarViewController.swift in Sources */,
 				EB8C463729334CF500FEEFD1 /* UserCollectionViewCell.swift in Sources */,
 				EB8C462E29334A3A00FEEFD1 /* UploadViewController.swift in Sources */,
+				EBDC213429376AB8006D9B0D /* TodoTableViewCell.swift in Sources */,
 				EBB240452930A0C000C0F6C3 /* AppDelegate.swift in Sources */,
 				EBDC213029373910006D9B0D /* TabBarVC.swift in Sources */,
+				EBF8A7B829387B5500207F84 /* TodoImgTableViewCell.swift in Sources */,
 				EB8C462C29334A3000FEEFD1 /* MapViewController.swift in Sources */,
 				EB8C463B293353C500FEEFD1 /* AddUserViewController.swift in Sources */,
 				EB8C463929334E7500FEEFD1 /* Controller+Extenction.swift in Sources */,

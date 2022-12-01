@@ -11,11 +11,16 @@ import FSCalendar
 class CalendarViewController: UIViewController {
     
     @IBOutlet var calendarView: FSCalendar!
+    @IBOutlet var todoTableView: UITableView!
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var dayLabel: UILabel!
     
     @IBOutlet var calendarHeight: NSLayoutConstraint!
     private var selectedDate = ""
+    
+    private let sections: [String] = ["test1", "test2"]
+    var testList: [String] = ["test1", "test1", "test1"]
+    var tableSwitch = true
     
     //날짜 포맷
     private lazy var dateFormatter: DateFormatter = {
@@ -38,8 +43,16 @@ class CalendarViewController: UIViewController {
         
         if swipe.direction == .up {
             calendarView.setScope(.week, animated: true)
+            
+            self.tableSwitch = false
+            self.todoTableView.reloadData()
+            
         } else if swipe.direction == .down {
             calendarView.setScope(.month, animated: true)
+            
+            self.tableSwitch = true
+            self.todoTableView.reloadData()
+
         }
     }
     
@@ -61,6 +74,17 @@ class CalendarViewController: UIViewController {
         //CalendarView
         self.calendarView.delegate = self
         self.calendarView.dataSource = self
+        
+        //TableView
+        self.todoTableView.delegate = self
+        self.todoTableView.dataSource = self
+        self.todoTableView.register(UINib(nibName: "TodoTableViewCell", bundle: nil),  forCellReuseIdentifier: "TodoTableViewCell")
+        self.todoTableView.register(UINib(nibName: "TodoImgTableViewCell", bundle: nil),  forCellReuseIdentifier: "TodoImgTableViewCell")
+        
+        todoTableView.separatorStyle = UITableViewCell.SeparatorStyle.none //테이블뷰 셀 선 없애기
+        todoTableView.sectionHeaderTopPadding = 0
+        todoTableView.tableHeaderView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 0.0, height: CGFloat.leastNonzeroMagnitude))
+        self.todoTableView.reloadData()
 
         //스와이프 액션
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swipeEvent(_:)))
@@ -74,7 +98,108 @@ class CalendarViewController: UIViewController {
     
 }
 
-//MARK:
+//MARK: 테이블뷰
+extension CalendarViewController: UITableViewDataSource, UITableViewDelegate{
+    
+    //몇개의 섹션을 반환할지 Return하는 메소드
+    func numberOfSections(in tableView: UITableView) -> Int {
+            return sections.count
+        }
+    
+    // 섹션의 타이틀을 리턴
+        func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+            return sections[section]
+        }
+    
+    // 몇개의 Cell을 반환할지 Return하는 메소드
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.testList.count
+    }
+    
+    //각Row에서 해당하는 Cell을 Return하는 메소드
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if tableSwitch == true {
+            let downcell = tableView.dequeueReusableCell(withIdentifier: "TodoTableViewCell", for: indexPath) as! TodoTableViewCell
+            
+            downcell.dot.layer.cornerRadius = downcell.dot.frame.height/2
+            downcell.dot.clipsToBounds = true
+            downcell.todoTitle.text = testList[indexPath.row]
+            
+            return downcell
+        }else {
+            let upcell = tableView.dequeueReusableCell(withIdentifier: "TodoImgTableViewCell", for: indexPath) as! TodoImgTableViewCell
+            
+            upcell.dot.layer.cornerRadius = upcell.dot.frame.height/2
+            upcell.dot.clipsToBounds = true
+            upcell.todoTitle.text = testList[indexPath.row]
+            
+            return upcell
+        }
+        
+        
+        
+        
+    }
+    
+    //클릭한 셀의 이벤트 처리
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+//    private func setEvents(){
+//        events.removeAll()
+//
+//        for index in 0..<todoList.endIndex {
+//            let arr = todoList[index].date.components(separatedBy: "T00:00:00.000Z")
+//            events.append(arr[0])
+//        }
+//    }
+//
+//    //이벤트 닷 표시갯수
+//    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+//
+//        setEvents()
+//        let eventformatter = DateFormatter()
+//        eventformatter.dateFormat = "yyyy-MM-dd"
+//        let eventDate = eventformatter.string(from: date)
+//
+//        if events.contains(eventDate) {
+//            return 1
+//        } else {
+//            return 0
+//        }
+//    }
+    
+    //셀 밀어서 삭제
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+//    //투두 삭제
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//
+//            let tbDelete_alert = UIAlertController(title: "삭제", message: "투두를 삭제하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+//
+//            let okAction = UIAlertAction(title: "예", style: .default) { (action) in
+//
+//                let uuid = self.selectedList[indexPath.row].id
+//                let param = DeleteTodoRequest(id: uuid )
+//                self.postDelete(param)
+//
+//            }
+//
+//            let noAction = UIAlertAction(title: "아니요", style: .default)
+//            tbDelete_alert.addAction(okAction)
+//            tbDelete_alert.addAction(noAction)
+//
+//            present(tbDelete_alert, animated: false, completion: nil)
+//
+//        }
+//    }
+}
+
+//MARK: 캘린더
 extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     
     //캘린더 높이 액션
