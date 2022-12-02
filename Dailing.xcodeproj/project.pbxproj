@@ -44,6 +44,9 @@
 		EB488D222936255200AC0BE2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EB488D212936254B00AC0BE2 /* libxml2.tbd */; };
 		EB488D242936255D00AC0BE2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EB488D232936255800AC0BE2 /* libsqlite3.tbd */; };
 		EB488D4B293632E200AC0BE2 /* inter-cufonfonts in Resources */ = {isa = PBXBuildFile; fileRef = EB488D4A293632E200AC0BE2 /* inter-cufonfonts */; };
+		EB5DC96B293A070B00384220 /* GetAllTodoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC96A293A070B00384220 /* GetAllTodoResponse.swift */; };
+		EB5DC96D293A076500384220 /* DailingURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC96C293A076500384220 /* DailingURL.swift */; };
+		EB5DC970293A0F1500384220 /* DailingLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC96F293A0F1500384220 /* DailingLog.swift */; };
 		EB8C4621293349CC00FEEFD1 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8C4620293349CC00FEEFD1 /* Map.storyboard */; };
 		EB8C4623293349D500FEEFD1 /* Upload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8C4622293349D500FEEFD1 /* Upload.storyboard */; };
 		EB8C4626293349E700FEEFD1 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8C4625293349E700FEEFD1 /* Calendar.storyboard */; };
@@ -128,6 +131,9 @@
 		EB488D212936254B00AC0BE2 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		EB488D232936255800AC0BE2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		EB488D4A293632E200AC0BE2 /* inter-cufonfonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "inter-cufonfonts"; sourceTree = "<group>"; };
+		EB5DC96A293A070B00384220 /* GetAllTodoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTodoResponse.swift; sourceTree = "<group>"; };
+		EB5DC96C293A076500384220 /* DailingURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailingURL.swift; sourceTree = "<group>"; };
+		EB5DC96F293A0F1500384220 /* DailingLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailingLog.swift; sourceTree = "<group>"; };
 		EB8C4620293349CC00FEEFD1 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		EB8C4622293349D500FEEFD1 /* Upload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Upload.storyboard; sourceTree = "<group>"; };
 		EB8C4625293349E700FEEFD1 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
@@ -255,6 +261,22 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		EB5DC969293A06EF00384220 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				EB5DC96A293A070B00384220 /* GetAllTodoResponse.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		EB5DC96E293A0EFA00384220 /* DailingLog */ = {
+			isa = PBXGroup;
+			children = (
+				EB5DC96F293A0F1500384220 /* DailingLog.swift */,
+			);
+			path = DailingLog;
+			sourceTree = "<group>";
+		};
 		EB8C4618293348AF00FEEFD1 /* BaseFile */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +304,8 @@
 		EB8C461A293348ED00FEEFD1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EB5DC969293A06EF00384220 /* Calendar */,
+				EB5DC96C293A076500384220 /* DailingURL.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -377,6 +401,7 @@
 				EB8C461B293348F300FEEFD1 /* Controller */,
 				EB8C461A293348ED00FEEFD1 /* Model */,
 				EB8C4619293348E600FEEFD1 /* View */,
+				EB5DC96E293A0EFA00384220 /* DailingLog */,
 				EB8C4618293348AF00FEEFD1 /* BaseFile */,
 				EBB240522930A0C100C0F6C3 /* Info.plist */,
 				EB488D16293624D100AC0BE2 /* Dailing-Header.h */,
@@ -538,9 +563,12 @@
 				EB8C463729334CF500FEEFD1 /* UserCollectionViewCell.swift in Sources */,
 				EB8C462E29334A3A00FEEFD1 /* UploadViewController.swift in Sources */,
 				EBDC213429376AB8006D9B0D /* TodoTableViewCell.swift in Sources */,
+				EB5DC96D293A076500384220 /* DailingURL.swift in Sources */,
 				EBB240452930A0C000C0F6C3 /* AppDelegate.swift in Sources */,
 				EBDC213029373910006D9B0D /* TabBarVC.swift in Sources */,
+				EB5DC970293A0F1500384220 /* DailingLog.swift in Sources */,
 				EBF8A7B829387B5500207F84 /* TodoImgTableViewCell.swift in Sources */,
+				EB5DC96B293A070B00384220 /* GetAllTodoResponse.swift in Sources */,
 				EB8C462C29334A3000FEEFD1 /* MapViewController.swift in Sources */,
 				EB8C463B293353C500FEEFD1 /* AddUserViewController.swift in Sources */,
 				EB8C463929334E7500FEEFD1 /* Controller+Extenction.swift in Sources */,

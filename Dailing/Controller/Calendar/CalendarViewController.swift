@@ -7,6 +7,7 @@
 
 import UIKit
 import FSCalendar
+import Alamofire
 
 class CalendarViewController: UIViewController {
     
@@ -17,6 +18,9 @@ class CalendarViewController: UIViewController {
     
     @IBOutlet var calendarHeight: NSLayoutConstraint!
     private var selectedDate = ""
+    
+    private var allTodo: [DotObject] = []
+    private var events: [String] = []
     
     private let sections: [String] = ["test1", "test2"]
     var testList: [String] = ["test1", "test1", "test1"]
@@ -36,6 +40,7 @@ class CalendarViewController: UIViewController {
         setUI()
         setCalendar()
         
+        getAllTodo()
     }
     
     //캘린더 스와이프 액션
@@ -94,6 +99,43 @@ class CalendarViewController: UIViewController {
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(swipeEvent(_:)))
         swipeDown.direction = .down
         self.view.addGestureRecognizer(swipeDown)
+    }
+    
+    //MARK: - GET AllTodo
+    private func getAllTodo() {
+        AF.request(DailingURL.getAlltodoURL, method: .get, headers: nil)
+            .validate()
+            .responseDecodable(of: GetAllTodoResponse.self) { [weak self] response in
+                guard let self = self else {return}
+                switch response.result {
+                case .success(let response):
+                    if response.success == true {
+                        print(DailingLog.debug("getAllTodo-success"))
+                        
+                        self.allTodo.removeAll()
+                        
+                        self.allTodo = response.data
+                        
+                        self.setEvents()
+                        self.calendarView.reloadData()
+                        self.todoTableView.reloadData()
+                        
+                    } else {
+                        print(DailingLog.error("getAllTodo-fail"))
+                        let fail_alert = UIAlertController(title: "실패", message: response.message, preferredStyle: UIAlertController.Style.alert)
+                        let okAction = UIAlertAction(title: "확인", style: .default)
+                        fail_alert.addAction(okAction)
+                        self.present(fail_alert, animated: false, completion: nil)
+                    }
+                case .failure(let error):
+                    print(DailingLog.error("getAllTodo-err"))
+                    print("failure: \(error.localizedDescription)")
+                    let fail_alert = UIAlertController(title: "실패", message: "서버 통신 실패", preferredStyle: UIAlertController.Style.alert)
+                    let okAction = UIAlertAction(title: "확인", style: .default)
+                    fail_alert.addAction(okAction)
+                    self.present(fail_alert, animated: false, completion: nil)
+                }
+            }
     }
     
 }
@@ -267,26 +309,34 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
     }
     
     private func setEvents(){
-        //        events.removeAll()
-        //
-        //        for index in 0..<todoList.endIndex {
-        //            let arr = todoList[index].date.components(separatedBy: "T00:00:00.000Z")
-        //            events.append(arr[0])
-        //        }
+        events.removeAll()
+        
+        for index in 0..<allTodo.endIndex {
+            let arr = allTodo[index].date
+    
+            events.append(arr)
+        }
     }
     
-    //    //이벤트 닷 표시갯수
-    //    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-    //
-    //        setEvents()
-    //        let eventformatter = DateFormatter()
-    //        eventformatter.dateFormat = "yyyy-MM-dd"
-    //        let eventDate = eventformatter.string(from: date)
-    //
-    //        if events.contains(eventDate) {
-    //            return 1
-    //        } else {
-    //            return 0
-    //        }
-    //    }
+    //이벤트 닷 표시갯수
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        
+        setEvents()
+        let eventformatter = DateFormatter()
+        eventformatter.dateFormat = "yyyy-MM-dd"
+        let eventDate = eventformatter.string(from: date)
+        
+        var dotcount = 0
+        
+        if events.contains(eventDate) {
+            for index in 0..<allTodo.endIndex {
+                if allTodo[index].date == eventDate {
+                    dotcount = allTodo[index].userList.count
+                }
+            }
+            return dotcount
+        } else {
+            return 0
+        }
+    }
 }
