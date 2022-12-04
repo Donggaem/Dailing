@@ -65,6 +65,7 @@
 		EBDC213029373910006D9B0D /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDC212F29373910006D9B0D /* TabBarVC.swift */; };
 		EBDC213229376779006D9B0D /* TodoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBDC213129376779006D9B0D /* TodoTableViewCell.xib */; };
 		EBDC213429376AB8006D9B0D /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDC213329376AB8006D9B0D /* TodoTableViewCell.swift */; };
+		EBEE37E8293C6D5900069052 /* SpoqaHanSans in Resources */ = {isa = PBXBuildFile; fileRef = EBEE37E7293C6D5800069052 /* SpoqaHanSans */; };
 		EBF8A7B629387B4200207F84 /* TodoImgTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBF8A7B529387B4200207F84 /* TodoImgTableViewCell.xib */; };
 		EBF8A7B829387B5500207F84 /* TodoImgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8A7B729387B5500207F84 /* TodoImgTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -154,6 +155,7 @@
 		EBDC212F29373910006D9B0D /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		EBDC213129376779006D9B0D /* TodoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTableViewCell.xib; sourceTree = "<group>"; };
 		EBDC213329376AB8006D9B0D /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
+		EBEE37E7293C6D5800069052 /* SpoqaHanSans */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SpoqaHanSans; sourceTree = "<group>"; };
 		EBF8A7B529387B4200207F84 /* TodoImgTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoImgTableViewCell.xib; sourceTree = "<group>"; };
 		EBF8A7B729387B5500207F84 /* TodoImgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoImgTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -396,7 +398,7 @@
 		EBB240432930A0C000C0F6C3 /* Dailing */ = {
 			isa = PBXGroup;
 			children = (
-				EB488D4A293632E200AC0BE2 /* inter-cufonfonts */,
+				EBEE37E6293C6CD400069052 /* Font */,
 				EB488CD32936249900AC0BE2 /* DaumMap.embeddedframework */,
 				EB8C461B293348F300FEEFD1 /* Controller */,
 				EB8C461A293348ED00FEEFD1 /* Model */,
@@ -407,6 +409,16 @@
 				EB488D16293624D100AC0BE2 /* Dailing-Header.h */,
 			);
 			path = Dailing;
+			sourceTree = "<group>";
+		};
+		EBEE37E6293C6CD400069052 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				EBEE37E7293C6D5800069052 /* SpoqaHanSans */,
+				EB488D4A293632E200AC0BE2 /* inter-cufonfonts */,
+			);
+			name = Font;
+			path = "래ㅜㅅ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,6 +510,7 @@
 				EB488D112936249900AC0BE2 /* noimage.png in Resources */,
 				EBB2404C2930A0C000C0F6C3 /* AddUser.storyboard in Resources */,
 				EB488D122936249900AC0BE2 /* map_present_background_update.png in Resources */,
+				EBEE37E8293C6D5900069052 /* SpoqaHanSans in Resources */,
 				EB488D132936249900AC0BE2 /* daum_th_line.png in Resources */,
 				EB488D0E2936249900AC0BE2 /* map_present_direction.png in Resources */,
 				EB488D0B2936249900AC0BE2 /* map_pinup_custom.png in Resources */,
@@ -735,7 +748,7 @@
 				INFOPLIST_FILE = Dailing/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = AddUser;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -775,7 +788,7 @@
 				INFOPLIST_FILE = Dailing/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = AddUser;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

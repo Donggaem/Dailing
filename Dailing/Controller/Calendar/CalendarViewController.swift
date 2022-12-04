@@ -57,7 +57,7 @@ class CalendarViewController: UIViewController {
             
             self.tableSwitch = true
             self.todoTableView.reloadData()
-
+            
         }
     }
     
@@ -90,7 +90,7 @@ class CalendarViewController: UIViewController {
         todoTableView.sectionHeaderTopPadding = 0
         todoTableView.tableHeaderView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 0.0, height: CGFloat.leastNonzeroMagnitude))
         self.todoTableView.reloadData()
-
+        
         //스와이프 액션
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swipeEvent(_:)))
         swipeUp.direction = .up
@@ -145,13 +145,13 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate{
     
     //몇개의 섹션을 반환할지 Return하는 메소드
     func numberOfSections(in tableView: UITableView) -> Int {
-            return sections.count
-        }
+        return sections.count
+    }
     
     // 섹션의 타이틀을 리턴
-        func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-            return sections[section]
-        }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section]
+    }
     
     // 몇개의 Cell을 반환할지 Return하는 메소드
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -189,56 +189,32 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate{
         
     }
     
-//    private func setEvents(){
-//        events.removeAll()
-//
-//        for index in 0..<todoList.endIndex {
-//            let arr = todoList[index].date.components(separatedBy: "T00:00:00.000Z")
-//            events.append(arr[0])
-//        }
-//    }
-//
-//    //이벤트 닷 표시갯수
-//    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-//
-//        setEvents()
-//        let eventformatter = DateFormatter()
-//        eventformatter.dateFormat = "yyyy-MM-dd"
-//        let eventDate = eventformatter.string(from: date)
-//
-//        if events.contains(eventDate) {
-//            return 1
-//        } else {
-//            return 0
-//        }
-//    }
-    
     //셀 밀어서 삭제
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-//    //투두 삭제
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//
-//            let tbDelete_alert = UIAlertController(title: "삭제", message: "투두를 삭제하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
-//
-//            let okAction = UIAlertAction(title: "예", style: .default) { (action) in
-//
-//                let uuid = self.selectedList[indexPath.row].id
-//                let param = DeleteTodoRequest(id: uuid )
-//                self.postDelete(param)
-//
-//            }
-//
-//            let noAction = UIAlertAction(title: "아니요", style: .default)
-//            tbDelete_alert.addAction(okAction)
-//            tbDelete_alert.addAction(noAction)
-//
-//            present(tbDelete_alert, animated: false, completion: nil)
-//
-//        }
-//    }
+    //    //투두 삭제
+    //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    //        if editingStyle == .delete {
+    //
+    //            let tbDelete_alert = UIAlertController(title: "삭제", message: "투두를 삭제하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+    //
+    //            let okAction = UIAlertAction(title: "예", style: .default) { (action) in
+    //
+    //                let uuid = self.selectedList[indexPath.row].id
+    //                let param = DeleteTodoRequest(id: uuid )
+    //                self.postDelete(param)
+    //
+    //            }
+    //
+    //            let noAction = UIAlertAction(title: "아니요", style: .default)
+    //            tbDelete_alert.addAction(okAction)
+    //            tbDelete_alert.addAction(noAction)
+    //
+    //            present(tbDelete_alert, animated: false, completion: nil)
+    //
+    //        }
+    //    }
 }
 
 //MARK: 캘린더
@@ -270,8 +246,8 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         calendarView.headerHeight = 0 // 헤더 높이 조정
         
         //이벤트 닷
-        calendarView.appearance.eventDefaultColor = UIColor.init(red: 0.231, green: 0.51, blue: 0.965, alpha: 1)
-        calendarView.appearance.eventSelectionColor = UIColor.init(red: 0.231, green: 0.51, blue: 0.965, alpha: 1)
+//        calendarView.appearance.eventDefaultColor = UIColor.init(red: 0.231, green: 0.51, blue: 0.965, alpha: 1)
+//        calendarView.appearance.eventSelectionColor = UIColor.init(red: 0.231, green: 0.51, blue: 0.965, alpha: 1)
         
         //오늘, 선택한 날짝 색
         calendarView.appearance.todayColor = UIColor.init(red: 0.176, green: 0.831, blue: 0.749, alpha: 1)
@@ -313,7 +289,7 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         
         for index in 0..<allTodo.endIndex {
             let arr = allTodo[index].date
-    
+            
             events.append(arr)
         }
     }
@@ -339,4 +315,11 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
             return 0
         }
     }
+    
+//    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]?{
+//    }
+//
+//    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventSelectionColorsFor date: Date) -> [UIColor]? {
+//
+//    }
 }

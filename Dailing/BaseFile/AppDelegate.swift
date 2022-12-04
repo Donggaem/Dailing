@@ -6,18 +6,29 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         //탭바설정
         UITabBar.appearance().tintColor = UIColor(red: 0.258, green: 0.258, blue: 0.258, alpha: 1)
 
+        //키보드 설정
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        
         return true
+    }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+           
+           // 세로방향 고정
+           return UIInterfaceOrientationMask.portrait
     }
 
     // MARK: UISceneSession Lifecycle

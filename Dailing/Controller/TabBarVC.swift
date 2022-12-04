@@ -37,9 +37,11 @@ extension TabBarVC {
     
     
     @objc func buttonClicked(sender : UIButton) {
+        
+        
         //버튼 클릭 시 CameraVC 이동
-        let homeStoryboard = UIStoryboard.init(name: "Upload", bundle: nil)
-        guard let uploadVC = homeStoryboard.instantiateViewController(identifier: "UploadViewController") as? UploadViewController
+        let uploadStoryboard = UIStoryboard.init(name: "Upload", bundle: nil)
+        guard let uploadVC = uploadStoryboard.instantiateViewController(identifier: "UploadViewController") as? UploadViewController
         else {
             return
         }

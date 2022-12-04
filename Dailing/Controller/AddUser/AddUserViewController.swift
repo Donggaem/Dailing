@@ -11,8 +11,8 @@ class AddUserViewController: UIViewController {
     @IBOutlet weak var userCollectionView: UICollectionView!
     
     //    var userArray: [] = []
-    var testimage: [String] = ["common (1)", "common (2)"]
-    var testname: [String] = ["test1", "test2"]
+    var testimage: [String] = ["common (1)", "common (2)", "common (3)", "common (4)", ""]
+    var testname: [String] = ["test1", "test2", "test3", "test4", ""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +29,13 @@ extension AddUserViewController: UICollectionViewDataSource, UICollectionViewDel
         self.userCollectionView.delegate = self
         self.userCollectionView.dataSource = self
         self.userCollectionView.register(UINib(nibName: "UserCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "UserCollectionViewCell")
+        
+        self.userCollectionView.backgroundColor = .none
     }
     
     // CollectionView item 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2;
+        return testimage.count;
     }
     
     // CollectionView Cell의 Object
@@ -43,15 +45,15 @@ extension AddUserViewController: UICollectionViewDataSource, UICollectionViewDel
         
         let lastindex = self.userCollectionView.lastIndexpath().row // 마지막 인덱스 찾기
         if indexPath.row == lastindex {
-            cell.layer.borderWidth = 2
-            cell.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
+            
             cell.userImage.image = UIImage(systemName: "plus")
-            cell.userName.text = ""
+            cell.userImage.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+            cell.userName.text = "계정 추가"
         } else {
-            cell.layer.borderWidth = 2
-            cell.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
+            
             cell.userImage.image = UIImage(named: testimage[indexPath.row])
             cell.userName.text = testname[indexPath.row]
+
         }
        
         
@@ -65,9 +67,18 @@ extension AddUserViewController: UICollectionViewDataSource, UICollectionViewDel
         if indexPath.row == lastindex {
  
         } else {
-            let storyBoard = UIStoryboard(name: "Calendar", bundle: nil)
-            let homeNav = storyBoard.instantiateViewController(identifier: "TabBarVC")
-            self.changeRootViewController(homeNav)
+            
+            // 탭바로 이동
+            let tabBarStoryboard: UIStoryboard = UIStoryboard(name: "Calendar", bundle: nil)
+            guard let tabBarVC = tabBarStoryboard.instantiateViewController(identifier: "TabBarVC") as? TabBarVC else {
+                return
+            }
+            tabBarVC.modalPresentationStyle = .fullScreen
+            self.present(tabBarVC, animated: true, completion: nil)
+            
+//            let storyBoard = UIStoryboard(name: "Calendar", bundle: nil)
+//            let homeNav = storyBoard.instantiateViewController(identifier: "TabBarVC")
+//            self.changeRootViewController(homeNav)
         }
         
     }

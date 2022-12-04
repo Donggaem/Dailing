@@ -8,6 +8,11 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-SemiBold.otf">
+            <string>Inter-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Add User View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -17,9 +22,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="9PC-6e-sA3">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G1j-W2-2vN">
-                                <rect key="frame" x="31" y="173" width="322" height="465"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="31" y="261" width="328" height="479"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="328" id="hXi-xY-0Rz"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TWc-Mw-lyj">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -37,14 +48,23 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dailing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVB-K5-hdD">
+                                <rect key="frame" x="112" y="151" width="166" height="60"/>
+                                <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="50"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G1j-W2-2vN" secondAttribute="trailing" constant="37" id="FcF-LT-e3m"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G1j-W2-2vN" secondAttribute="bottom" constant="172" id="MRx-KS-GqG"/>
-                            <constraint firstItem="G1j-W2-2vN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="Zep-za-dof"/>
-                            <constraint firstItem="G1j-W2-2vN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="ckY-0G-soy"/>
+                            <constraint firstItem="G1j-W2-2vN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0UD-F4-mSY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G1j-W2-2vN" secondAttribute="trailing" constant="31" id="5BK-5o-zJE"/>
+                            <constraint firstItem="tVB-K5-hdD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UYA-Y2-VNk"/>
+                            <constraint firstItem="G1j-W2-2vN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="YFK-X2-jh0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G1j-W2-2vN" secondAttribute="bottom" constant="70" id="ZJx-bh-Lza"/>
+                            <constraint firstItem="G1j-W2-2vN" firstAttribute="top" secondItem="tVB-K5-hdD" secondAttribute="bottom" constant="50" id="oIb-rW-OZJ"/>
+                            <constraint firstItem="tVB-K5-hdD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="roO-Wq-Mz4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EvW-mB-s1v"/>
@@ -76,6 +96,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="473" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

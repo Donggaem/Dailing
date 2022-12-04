@@ -10,5 +10,8 @@ import Foundation
 struct DailingURL {
     
     //MARK: 캘린더
-    static let getAlltodoURL = "http://valun.kro.kr/post/dot"
+    static let getAlltodoURL = "http://valun.kro.kr/posts/dots"
+    
+    //MARK: 업로드
+    static let uploadURL = "http://valun.kro.kr/posts"
 }
