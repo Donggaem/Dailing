@@ -28,8 +28,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common (1)" translatesAutoresizingMaskIntoConstraints="NO" id="4ud-1h-SuX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ud-1h-SuX">
                                 <rect key="frame" x="32" y="111" width="326" height="326"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="326" id="HTm-Cb-xqg"/>
                                     <constraint firstAttribute="width" constant="326" id="cuE-jR-cB6"/>
@@ -74,12 +75,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_a_photo (1)" translatesAutoresizingMaskIntoConstraints="NO" id="IP5-bu-cNp">
+                                <rect key="frame" x="175" y="254" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ivs-f9-YzJ"/>
+                                    <constraint firstAttribute="width" constant="40" id="eyn-it-G9L"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nKd-dq-LZ2" secondAttribute="trailing" constant="16" id="1ca-H1-xeA"/>
                             <constraint firstItem="Os8-7T-Ipt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="5hI-hP-o0r"/>
+                            <constraint firstItem="IP5-bu-cNp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="175" id="7gN-rF-aII"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bs7-TX-fzN" secondAttribute="trailing" constant="16" id="87s-J2-rAL"/>
                             <constraint firstItem="Os8-7T-Ipt" firstAttribute="top" secondItem="bs7-TX-fzN" secondAttribute="bottom" constant="24" id="DeN-eO-G1x"/>
                             <constraint firstItem="bs7-TX-fzN" firstAttribute="top" secondItem="nKd-dq-LZ2" secondAttribute="bottom" constant="24" id="IP0-3h-yGE"/>
@@ -93,12 +102,14 @@
                             <constraint firstItem="Os8-7T-Ipt" firstAttribute="top" secondItem="wbG-A6-IKX" secondAttribute="bottom" constant="31" id="k2J-V8-FTT"/>
                             <constraint firstAttribute="bottom" secondItem="Os8-7T-Ipt" secondAttribute="bottom" constant="75" id="rzS-pM-xLW"/>
                             <constraint firstItem="4ud-1h-SuX" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="32" id="vrR-My-qCM"/>
+                            <constraint firstItem="IP5-bu-cNp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="163" id="yxB-9T-hlL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="niY-4I-lD3"/>
                     <connections>
                         <outlet property="contentTextView" destination="bs7-TX-fzN" id="RuQ-qM-lqQ"/>
                         <outlet property="countLabel" destination="wbG-A6-IKX" id="iip-Ys-VNt"/>
+                        <outlet property="photoIcon" destination="IP5-bu-cNp" id="Dk4-WO-baL"/>
                         <outlet property="titleTextField" destination="nKd-dq-LZ2" id="98b-b8-Xba"/>
                         <outlet property="uploadBtn" destination="Os8-7T-Ipt" id="8uv-5j-mnC"/>
                         <outlet property="uploadImage" destination="4ud-1h-SuX" id="56R-bo-dvV"/>
@@ -111,7 +122,6 @@
         <!--Navigation Controller-->
         <scene sceneID="8Fm-Dn-j4l">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xd9-Xa-I2G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ch9-HX-GpD" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -124,13 +134,14 @@
                         <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="VlF-pz-Llf"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xd9-Xa-I2G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="121.53846153846153" y="-2.1327014218009479"/>
         </scene>
     </scenes>
     <resources>
+        <image name="add_a_photo (1)" width="40" height="40"/>
         <image name="back" width="473" height="512"/>
-        <image name="common (1)" width="206" height="206"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

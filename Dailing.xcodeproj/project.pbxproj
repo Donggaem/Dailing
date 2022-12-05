@@ -57,6 +57,8 @@
 		EB8C463729334CF500FEEFD1 /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C463629334CF500FEEFD1 /* UserCollectionViewCell.swift */; };
 		EB8C463929334E7500FEEFD1 /* Controller+Extenction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C463829334E7500FEEFD1 /* Controller+Extenction.swift */; };
 		EB8C463B293353C500FEEFD1 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C463A293353C500FEEFD1 /* AddUserViewController.swift */; };
+		EB8D24D6293D79C7002E260A /* UploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D24D5293D79C7002E260A /* UploadRequest.swift */; };
+		EB8D24D8293D79D5002E260A /* UploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D24D7293D79D5002E260A /* UploadResponse.swift */; };
 		EBB240452930A0C000C0F6C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB240442930A0C000C0F6C3 /* AppDelegate.swift */; };
 		EBB240472930A0C000C0F6C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB240462930A0C000C0F6C3 /* SceneDelegate.swift */; };
 		EBB2404C2930A0C000C0F6C3 /* AddUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB2404A2930A0C000C0F6C3 /* AddUser.storyboard */; };
@@ -145,6 +147,8 @@
 		EB8C463629334CF500FEEFD1 /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
 		EB8C463829334E7500FEEFD1 /* Controller+Extenction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controller+Extenction.swift"; sourceTree = "<group>"; };
 		EB8C463A293353C500FEEFD1 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		EB8D24D5293D79C7002E260A /* UploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadRequest.swift; sourceTree = "<group>"; };
+		EB8D24D7293D79D5002E260A /* UploadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadResponse.swift; sourceTree = "<group>"; };
 		EBB240412930A0C000C0F6C3 /* Dailing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB240442930A0C000C0F6C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBB240462930A0C000C0F6C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -306,6 +310,7 @@
 		EB8C461A293348ED00FEEFD1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EB8D24D4293D79A0002E260A /* Upload */,
 				EB5DC969293A06EF00384220 /* Calendar */,
 				EB5DC96C293A076500384220 /* DailingURL.swift */,
 			);
@@ -375,6 +380,15 @@
 				EBF8A7B729387B5500207F84 /* TodoImgTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		EB8D24D4293D79A0002E260A /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				EB8D24D5293D79C7002E260A /* UploadRequest.swift */,
+				EB8D24D7293D79D5002E260A /* UploadResponse.swift */,
+			);
+			path = Upload;
 			sourceTree = "<group>";
 		};
 		EBB240382930A0C000C0F6C3 = {
@@ -575,12 +589,14 @@
 				EB8C462A29334A2800FEEFD1 /* CalendarViewController.swift in Sources */,
 				EB8C463729334CF500FEEFD1 /* UserCollectionViewCell.swift in Sources */,
 				EB8C462E29334A3A00FEEFD1 /* UploadViewController.swift in Sources */,
+				EB8D24D8293D79D5002E260A /* UploadResponse.swift in Sources */,
 				EBDC213429376AB8006D9B0D /* TodoTableViewCell.swift in Sources */,
 				EB5DC96D293A076500384220 /* DailingURL.swift in Sources */,
 				EBB240452930A0C000C0F6C3 /* AppDelegate.swift in Sources */,
 				EBDC213029373910006D9B0D /* TabBarVC.swift in Sources */,
 				EB5DC970293A0F1500384220 /* DailingLog.swift in Sources */,
 				EBF8A7B829387B5500207F84 /* TodoImgTableViewCell.swift in Sources */,
+				EB8D24D6293D79C7002E260A /* UploadRequest.swift in Sources */,
 				EB5DC96B293A070B00384220 /* GetAllTodoResponse.swift in Sources */,
 				EB8C462C29334A3000FEEFD1 /* MapViewController.swift in Sources */,
 				EB8C463B293353C500FEEFD1 /* AddUserViewController.swift in Sources */,
