@@ -10,5 +10,5 @@ import Foundation
 struct UploadResponse: Decodable {
     var success: Bool
     var message: String
-    
+    var data: String?
 }

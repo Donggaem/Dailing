@@ -12,7 +12,7 @@ struct UploadRequest: Encodable {
     var userId: String
     var title: String
     var content: String
-    var lat: Float
-    var lng: Float
+    var lat: Double
+    var lng: Double
     var image: Data
 }

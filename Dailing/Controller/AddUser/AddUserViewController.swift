@@ -67,6 +67,8 @@ extension AddUserViewController: UICollectionViewDataSource, UICollectionViewDel
         if indexPath.row == lastindex {
  
         } else {
+            UserDefaults.standard.set(testname[indexPath.row], forKey: "userId")
+            print(UserDefaults.standard.string(forKey: "userId")!)
             
             // 탭바로 이동
             let tabBarStoryboard: UIStoryboard = UIStoryboard(name: "Calendar", bundle: nil)

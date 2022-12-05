@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>앱에서 위치 정보 제공을 허용하시겠습니까?</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>앱에서 사진첩에 접근하여 사진을 선택하려 합니다. 허용하시겠습니까?</string>
 	<key>NSCameraUsageDescription</key>
