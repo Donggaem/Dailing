@@ -67,6 +67,9 @@ class UploadViewController: UIViewController {
         let lng = self.lng_now
         let image = imageData!
         
+        print(lat)
+        print(lng)
+        
         let params = UploadRequest(userId: userId, title: title, content: content, lat: lat, lng: lng, image: image)
         postUpload(params)
         
@@ -96,14 +99,14 @@ class UploadViewController: UIViewController {
         // 사용자에게 허용 받기 alert 띄우기
         locationManger.requestWhenInUseAuthorization()
         
-        // 아이폰 설정에서의 위치 서비스가 켜진 상태라면
-        if CLLocationManager.locationServicesEnabled() {
-            print("위치 서비스 On 상태")
-            locationManger.startUpdatingLocation() //위치 정보 받아오기 시작
-            print(locationManger.location?.coordinate)
-        } else {
-            print("위치 서비스 Off 상태")
-        }
+//        // 아이폰 설정에서의 위치 서비스가 켜진 상태라면
+//        if CLLocationManager.locationServicesEnabled() {
+//            print("위치 서비스 On 상태")
+//            locationManger.startUpdatingLocation() //위치 정보 받아오기 시작
+//            print(locationManger.location?.coordinate)
+//        } else {
+//            print("위치 서비스 Off 상태")
+//        }
     }
     
     //알림창 설정
@@ -387,12 +390,29 @@ extension UploadViewController: UITextViewDelegate {
 }
 
 extension UploadViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways,.authorizedWhenInUse:
+            print("GPS 권한이 설정됨")
+            locationManger.startUpdatingLocation() //위치 정보 받아오기 시작
+        case .restricted,.notDetermined:
+            print("GPS 권한이 설정되지않음")
+            self.locationManger.requestWhenInUseAuthorization()
+        case .denied:
+            print("GPS 권한이 요청 거부됨")
+            self.locationManger.requestWhenInUseAuthorization()
+        default:
+            print("GPS: Default")
+        }
+    }
+    
     // 위치 정보 계속 업데이트 -> 위도 경도 받아옴
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //        print("didUpdateLocations")
         if let location = locations.first {
-//            print("위도: \(location.coordinate.latitude)")
-//            print("경도: \(location.coordinate.longitude)")
+            print("위도: \(location.coordinate.latitude)")
+            print("경도: \(location.coordinate.longitude)")
             
             lat_now = location.coordinate.latitude
             lng_now = location.coordinate.longitude

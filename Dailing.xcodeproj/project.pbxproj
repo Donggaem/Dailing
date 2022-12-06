@@ -44,6 +44,7 @@
 		EB488D222936255200AC0BE2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EB488D212936254B00AC0BE2 /* libxml2.tbd */; };
 		EB488D242936255D00AC0BE2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EB488D232936255800AC0BE2 /* libsqlite3.tbd */; };
 		EB488D4B293632E200AC0BE2 /* inter-cufonfonts in Resources */ = {isa = PBXBuildFile; fileRef = EB488D4A293632E200AC0BE2 /* inter-cufonfonts */; };
+		EB49CECA293DD0AF00ABD94E /* pointMapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB49CEC9293DD0AF00ABD94E /* pointMapResponse.swift */; };
 		EB5DC96B293A070B00384220 /* GetAllTodoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC96A293A070B00384220 /* GetAllTodoResponse.swift */; };
 		EB5DC96D293A076500384220 /* DailingURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC96C293A076500384220 /* DailingURL.swift */; };
 		EB5DC970293A0F1500384220 /* DailingLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC96F293A0F1500384220 /* DailingLog.swift */; };
@@ -134,6 +135,7 @@
 		EB488D212936254B00AC0BE2 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		EB488D232936255800AC0BE2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		EB488D4A293632E200AC0BE2 /* inter-cufonfonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "inter-cufonfonts"; sourceTree = "<group>"; };
+		EB49CEC9293DD0AF00ABD94E /* pointMapResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pointMapResponse.swift; sourceTree = "<group>"; };
 		EB5DC96A293A070B00384220 /* GetAllTodoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTodoResponse.swift; sourceTree = "<group>"; };
 		EB5DC96C293A076500384220 /* DailingURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailingURL.swift; sourceTree = "<group>"; };
 		EB5DC96F293A0F1500384220 /* DailingLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailingLog.swift; sourceTree = "<group>"; };
@@ -267,6 +269,14 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		EB49CEC8293DD07C00ABD94E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				EB49CEC9293DD0AF00ABD94E /* pointMapResponse.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		EB5DC969293A06EF00384220 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +320,7 @@
 		EB8C461A293348ED00FEEFD1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EB49CEC8293DD07C00ABD94E /* Map */,
 				EB8D24D4293D79A0002E260A /* Upload */,
 				EB5DC969293A06EF00384220 /* Calendar */,
 				EB5DC96C293A076500384220 /* DailingURL.swift */,
@@ -589,6 +600,7 @@
 				EB8C462A29334A2800FEEFD1 /* CalendarViewController.swift in Sources */,
 				EB8C463729334CF500FEEFD1 /* UserCollectionViewCell.swift in Sources */,
 				EB8C462E29334A3A00FEEFD1 /* UploadViewController.swift in Sources */,
+				EB49CECA293DD0AF00ABD94E /* pointMapResponse.swift in Sources */,
 				EB8D24D8293D79D5002E260A /* UploadResponse.swift in Sources */,
 				EBDC213429376AB8006D9B0D /* TodoTableViewCell.swift in Sources */,
 				EB5DC96D293A076500384220 /* DailingURL.swift in Sources */,

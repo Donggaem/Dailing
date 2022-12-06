@@ -14,4 +14,7 @@ struct DailingURL {
     
     //MARK: 업로드
     static let uploadURL = "http://valun.kro.kr/posts"
+    
+    //MARK: 맵
+    static let getPointMapURL = "http://valun.kro.kr/posts/family"
 }

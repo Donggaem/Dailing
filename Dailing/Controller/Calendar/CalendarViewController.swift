@@ -43,6 +43,13 @@ class CalendarViewController: UIViewController {
         getAllTodo()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        todoTableView.reloadData()
+        calendarView.reloadData()
+    }
+    
     //캘린더 스와이프 액션
     @objc func swipeEvent(_ swipe: UISwipeGestureRecognizer) {
         
