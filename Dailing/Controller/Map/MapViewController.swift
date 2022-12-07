@@ -49,36 +49,7 @@ class MapViewController: UIViewController {
         
     }
     
-    //MARK: - GET PointMap
-    private func getPointMap() {
-        AF.request(DailingURL.getPointMapURL, method: .get, headers: nil)
-            .validate()
-            .responseDecodable(of: pointMapResponse.self) { [weak self] response in
-                guard let self = self else {return}
-                switch response.result {
-                case .success(let response):
-                    if response.success == true {
-                        print(DailingLog.debug("getPointMap-success"))
-                    
-                        self.userList = response.data
-                        
-                    } else {
-                        print(DailingLog.error("getPointMap-fail"))
-                        let fail_alert = UIAlertController(title: "실패", message: response.message, preferredStyle: UIAlertController.Style.alert)
-                        let okAction = UIAlertAction(title: "확인", style: .default)
-                        fail_alert.addAction(okAction)
-                        self.present(fail_alert, animated: false, completion: nil)
-                    }
-                case .failure(let error):
-                    print(DailingLog.error("getPointMap-err"))
-                    print("failure: \(error.localizedDescription)")
-                    let fail_alert = UIAlertController(title: "실패", message: "서버 통신 실패", preferredStyle: UIAlertController.Style.alert)
-                    let okAction = UIAlertAction(title: "확인", style: .default)
-                    fail_alert.addAction(okAction)
-                    self.present(fail_alert, animated: false, completion: nil)
-                }
-            }
-    }
+   
 }
     
 //MARK: - EXTENSION MAP
@@ -103,6 +74,12 @@ extension MapViewController: MTMapViewDelegate {
         }
     }
     
+    // poiItem 클릭 이벤트
+    func mapView(_ mapView: MTMapView!, touchedCalloutBalloonOf poiItem: MTMapPOIItem!) {
+        // 인덱스는 poiItem의 태그로 접근
+        let index = poiItem.tag
+    }
+    
     func createPin(itemName: String, getla: Double, getlo: Double, markerType: MTMapPOIItemMarkerType) -> MTMapPOIItem{
         
         let poiltem = MTMapPOIItem()
@@ -110,14 +87,9 @@ extension MapViewController: MTMapViewDelegate {
         poiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: getla, longitude: getlo))
         poiltem.markerType = markerType
         mapView!.addPOIItems([poiltem])
+        poiltem.tag = 1
         
         return poiltem
-    }
-    
-    // poiItem 클릭 이벤트
-    func mapView(_ mapView: MTMapView!, touchedCalloutBalloonOf poiItem: MTMapPOIItem!) {
-        // 인덱스는 poiItem의 태그로 접근
-        let index = poiItem.tag
     }
 }
 

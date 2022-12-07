@@ -8,6 +8,7 @@
 import UIKit
 import FSCalendar
 import Alamofire
+import Kingfisher
 
 class CalendarViewController: UIViewController {
     
@@ -18,12 +19,16 @@ class CalendarViewController: UIViewController {
     
     @IBOutlet var calendarHeight: NSLayoutConstraint!
     private var selectedDate = ""
+    private var selectedList: [UserObject] = []
     
     private var allTodo: [DotObject] = []
     private var events: [String] = []
     
-    private let sections: [String] = ["test1", "test2"]
-    var testList: [String] = ["test1", "test1", "test1"]
+    private var sections: [String] = []
+    var testOneList: [PostObject] = []
+    var testTwoList: [PostObject] = []
+    var testThreeList: [PostObject] = []
+    var testFourList: [PostObject] = []
     var tableSwitch = true
     
     //날짜 포맷
@@ -45,6 +50,10 @@ class CalendarViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        let date = selectedDate
+        let param = SelectedDateRequest(date: date)
+        postSelectedDate(param)
         
         todoTableView.reloadData()
         calendarView.reloadData()
@@ -70,7 +79,7 @@ class CalendarViewController: UIViewController {
     
     private func setUI() {
         
-        self.view.bringSubviewToFront(calendarView)
+        //        self.view.bringSubviewToFront(calendarView)
         
         //오늘날짜
         let date = NSDate()
@@ -145,6 +154,64 @@ class CalendarViewController: UIViewController {
             }
     }
     
+    //MARK: - POST SELECTEDDATE
+    private func postSelectedDate(_ parameters: SelectedDateRequest){
+        AF.request(DailingURL.selectedDateURL, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)
+            .validate()
+            .responseDecodable(of: SelectedDateResponse.self) { [self] response in
+                switch response.result {
+                case .success(let response):
+                    if response.success == true {
+                        
+                        DailingLog.debug("postSelectedDate - Success")
+                        selectedList.removeAll()
+                        sections.removeAll()
+                        testOneList.removeAll()
+                        testTwoList.removeAll()
+                        testThreeList.removeAll()
+                        testFourList.removeAll()
+                        
+                        selectedList = response.data
+                        
+                        for index in 0..<selectedList.endIndex {
+                            sections.append(selectedList[index].userId)
+                            
+                            if selectedList[index].userId == "test1" {
+                                testOneList = selectedList[index].post
+                            } else if selectedList[index].userId == "test2" {
+                                testTwoList = selectedList[index].post
+                                
+                            }else if selectedList[index].userId == "test3" {
+                                testThreeList = selectedList[index].post
+                                
+                            }else if selectedList[index].userId == "test4" {
+                                testFourList = selectedList[index].post
+                                
+                            }
+                        }
+                        
+                        self.calendarView.reloadData()
+                        self.todoTableView.reloadData()
+                        
+                    } else {
+                        DailingLog.error("postSelectedDate - fail")
+                        let loginFail_alert = UIAlertController(title: "실패", message: response.message, preferredStyle: UIAlertController.Style.alert)
+                        let okAction = UIAlertAction(title: "확인", style: .default)
+                        loginFail_alert.addAction(okAction)
+                        present(loginFail_alert, animated: false, completion: nil)
+                        
+                    }
+                case .failure(let error):
+                    DailingLog.error("postSelectedDate - err")
+                    print(error.localizedDescription)
+                    let loginFail_alert = UIAlertController(title: "실패", message: "서버 통신 실패", preferredStyle: UIAlertController.Style.alert)
+                    let okAction = UIAlertAction(title: "확인", style: .default)
+                    loginFail_alert.addAction(okAction)
+                    present(loginFail_alert, animated: false, completion: nil)
+                }
+            }
+    }
+    
 }
 
 //MARK: 테이블뷰
@@ -157,14 +224,31 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate{
     
     // 섹션의 타이틀을 리턴
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
         return sections[section]
     }
     
     // 몇개의 Cell을 반환할지 Return하는 메소드
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.testList.count
+        
+        if sections[section] == "test1" {
+            return testOneList.count
+        }else if sections[section] == "test2" {
+            return testTwoList.count
+            
+        }else if sections[section] == "test3" {
+            return testThreeList.count
+            
+        }else if sections[section] == "test4" {
+            return testFourList.count
+            
+        }else {
+            return 0
+        }
+        
     }
     
+    //수정해야함 1206
     //각Row에서 해당하는 Cell을 Return하는 메소드
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -173,15 +257,61 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate{
             
             downcell.dot.layer.cornerRadius = downcell.dot.frame.height/2
             downcell.dot.clipsToBounds = true
-            downcell.todoTitle.text = testList[indexPath.row]
             
+            if indexPath.section == 0 {
+                print("test\(testOneList[indexPath.row].title)")
+                downcell.todoTitle.text = testOneList[indexPath.row].title
+                downcell.todoContent.text = testOneList[indexPath.row].content
+            }else if indexPath.section == 1 {
+                downcell.todoTitle.text = testTwoList[indexPath.row].title
+                downcell.todoContent.text = testTwoList[indexPath.row].content
+
+            }else if indexPath.section == 2 {
+                downcell.todoTitle.text = testThreeList[indexPath.row].title
+                downcell.todoContent.text = testThreeList[indexPath.row].content
+
+            }else if indexPath.section == 3 {
+                downcell.todoTitle.text = testFourList[indexPath.row].title
+                downcell.todoContent.text = testFourList[indexPath.row].content
+
+            }
             return downcell
+            
         }else {
             let upcell = tableView.dequeueReusableCell(withIdentifier: "TodoImgTableViewCell", for: indexPath) as! TodoImgTableViewCell
             
             upcell.dot.layer.cornerRadius = upcell.dot.frame.height/2
             upcell.dot.clipsToBounds = true
-            upcell.todoTitle.text = testList[indexPath.row]
+            
+            if indexPath.section == 0 {
+                upcell.todoTitle.text = testOneList[indexPath.row].title
+                upcell.todoContent.text = testOneList[indexPath.row].content
+                
+                let url = URL(string: testOneList[indexPath.row].image)
+                upcell.todoImg.kf.setImage(with: url)
+
+            }else if indexPath.section == 1 {
+                upcell.todoTitle.text = testTwoList[indexPath.row].title
+                upcell.todoContent.text = testTwoList[indexPath.row].content
+                
+                let url = URL(string: testTwoList[indexPath.row].image)
+                upcell.todoImg.kf.setImage(with: url)
+
+            }else if indexPath.section == 2 {
+                upcell.todoTitle.text = testThreeList[indexPath.row].title
+                upcell.todoContent.text = testThreeList[indexPath.row].content
+                
+                let url = URL(string: testThreeList[indexPath.row].image)
+                upcell.todoImg.kf.setImage(with: url)
+
+            }else if indexPath.section == 3 {
+                upcell.todoTitle.text = testFourList[indexPath.row].title
+                upcell.todoContent.text = testFourList[indexPath.row].content
+                
+                let url = URL(string: testThreeList[indexPath.row].image)
+                upcell.todoImg.kf.setImage(with: url)
+
+            }
             
             return upcell
         }
@@ -253,8 +383,8 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         calendarView.headerHeight = 0 // 헤더 높이 조정
         
         //이벤트 닷
-//        calendarView.appearance.eventDefaultColor = UIColor.init(red: 0.231, green: 0.51, blue: 0.965, alpha: 1)
-//        calendarView.appearance.eventSelectionColor = UIColor.init(red: 0.231, green: 0.51, blue: 0.965, alpha: 1)
+        //        calendarView.appearance.eventDefaultColor = UIColor.init(red: 0.231, green: 0.51, blue: 0.965, alpha: 1)
+        //        calendarView.appearance.eventSelectionColor = UIColor.init(red: 0.231, green: 0.51, blue: 0.965, alpha: 1)
         
         //오늘, 선택한 날짝 색
         calendarView.appearance.todayColor = UIColor.init(red: 0.176, green: 0.831, blue: 0.749, alpha: 1)
@@ -285,10 +415,11 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         dayLabel.text = dayfotmatter.string(from: date)
         
         
-        //        todoTableView.reloadData()
-        //        //        calendarView.reloadData()
-        //        getTodo()
-        //        print(selectedList)
+        todoTableView.reloadData()
+        //        calendarView.reloadData()
+        let date = selectedDate
+        let param = SelectedDateRequest(date: date)
+        postSelectedDate(param)
     }
     
     private func setEvents(){
@@ -323,10 +454,10 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         }
     }
     
-//    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]?{
-//    }
-//
-//    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventSelectionColorsFor date: Date) -> [UIColor]? {
-//
-//    }
+    //    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]?{
+    //    }
+    //
+    //    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventSelectionColorsFor date: Date) -> [UIColor]? {
+    //
+    //    }
 }

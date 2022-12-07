@@ -96,17 +96,7 @@ class UploadViewController: UIViewController {
         locationManger.delegate = self
         // 거리 정확도 설정
         locationManger.desiredAccuracy = kCLLocationAccuracyBest
-        // 사용자에게 허용 받기 alert 띄우기
-        locationManger.requestWhenInUseAuthorization()
-        
-//        // 아이폰 설정에서의 위치 서비스가 켜진 상태라면
-//        if CLLocationManager.locationServicesEnabled() {
-//            print("위치 서비스 On 상태")
-//            locationManger.startUpdatingLocation() //위치 정보 받아오기 시작
-//            print(locationManger.location?.coordinate)
-//        } else {
-//            print("위치 서비스 Off 상태")
-//        }
+
     }
     
     //알림창 설정
@@ -166,11 +156,6 @@ class UploadViewController: UIViewController {
             if let image = self.imageData {
                 multipartFormData.append(image, withName: "image", fileName: "test.jpeg", mimeType: "image/jpeg")
             }
-            
-            //            if let image = self.uploadImage.image!.jpegData(compressionQuality: 0.5) {
-            //                multipartFormData.append(image, withName: "img", fileName: "test.jpeg", mimeType: "image/jpeg")
-            //                self.imageData = image
-            //            }
             
         }, to: DailingURL.uploadURL, method: .post, headers: headers).responseDecodable(of: UploadResponse.self) { [self] response in
             switch response.result {
@@ -398,10 +383,10 @@ extension UploadViewController: CLLocationManagerDelegate {
             locationManger.startUpdatingLocation() //위치 정보 받아오기 시작
         case .restricted,.notDetermined:
             print("GPS 권한이 설정되지않음")
-            self.locationManger.requestWhenInUseAuthorization()
+            self.locationManger.requestWhenInUseAuthorization() //권한허용 알란트
         case .denied:
             print("GPS 권한이 요청 거부됨")
-            self.locationManger.requestWhenInUseAuthorization()
+            self.locationManger.requestWhenInUseAuthorization() //권한허용 알란트
         default:
             print("GPS: Default")
         }
