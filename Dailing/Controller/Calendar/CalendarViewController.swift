@@ -59,6 +59,19 @@ class CalendarViewController: UIViewController {
         calendarView.reloadData()
     }
     
+    //MARK: - IBACTION
+    @IBAction func uploadBtnPressed(_ sender: UIButton) {
+        //버튼 클릭 시 CameraVC 이동
+        let uploadStoryboard = UIStoryboard.init(name: "Upload", bundle: nil)
+        guard let uploadVC = uploadStoryboard.instantiateViewController(identifier: "UploadViewController") as? UploadViewController
+        else {
+            return
+        }
+        //        uploadVC.modalPresentationStyle = .fullScreen
+        present(uploadVC, animated: true, completion: nil)
+    }
+    
+    //MARK: - OBJC
     //캘린더 스와이프 액션
     @objc func swipeEvent(_ swipe: UISwipeGestureRecognizer) {
         
@@ -176,15 +189,15 @@ class CalendarViewController: UIViewController {
                         for index in 0..<selectedList.endIndex {
                             sections.append(selectedList[index].userId)
                             
-                            if selectedList[index].userId == "test1" {
+                            if selectedList[index].userId == "신형만" {
                                 testOneList = selectedList[index].post
-                            } else if selectedList[index].userId == "test2" {
+                            } else if selectedList[index].userId == "봉미선" {
                                 testTwoList = selectedList[index].post
                                 
-                            }else if selectedList[index].userId == "test3" {
+                            }else if selectedList[index].userId == "짱구" {
                                 testThreeList = selectedList[index].post
                                 
-                            }else if selectedList[index].userId == "test4" {
+                            }else if selectedList[index].userId == "짱아" {
                                 testFourList = selectedList[index].post
                                 
                             }
@@ -231,15 +244,15 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate{
     // 몇개의 Cell을 반환할지 Return하는 메소드
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if sections[section] == "test1" {
+        if sections[section] == "신형만" {
             return testOneList.count
-        }else if sections[section] == "test2" {
+        }else if sections[section] == "봉미선" {
             return testTwoList.count
             
-        }else if sections[section] == "test3" {
+        }else if sections[section] == "짱구" {
             return testThreeList.count
             
-        }else if sections[section] == "test4" {
+        }else if sections[section] == "짱아" {
             return testFourList.count
             
         }else {
@@ -248,7 +261,7 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate{
         
     }
     
-    //수정해야함 1206
+    //수정해야함
     //각Row에서 해당하는 Cell을 Return하는 메소드
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -258,8 +271,9 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate{
             downcell.dot.layer.cornerRadius = downcell.dot.frame.height/2
             downcell.dot.clipsToBounds = true
             
+            print(indexPath.section.description)
+            
             if indexPath.section == 0 {
-                print("test\(testOneList[indexPath.row].title)")
                 downcell.todoTitle.text = testOneList[indexPath.row].title
                 downcell.todoContent.text = testOneList[indexPath.row].content
             }else if indexPath.section == 1 {

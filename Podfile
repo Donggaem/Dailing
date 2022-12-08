@@ -12,5 +12,6 @@ pod 'IQKeyboardManagerSwift'
 pod 'FSCalendar'
 pod 'SnapKit'
 pod 'Kingfisher'
+pod 'FSPagerView'
 
 end

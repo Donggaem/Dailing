@@ -11,8 +11,10 @@ class AddUserViewController: UIViewController {
     @IBOutlet weak var userCollectionView: UICollectionView!
     
     //    var userArray: [] = []
-    var testimage: [String] = ["common (1)", "common (2)", "common (3)", "common (4)", ""]
-    var testname: [String] = ["test1", "test2", "test3", "test4", ""]
+    var testimage: [String] = ["신형만", "봉미선", "짱구", "짱아", ""]
+
+//    var testimage: [String] = ["common (1)", "common (2)", "common (3)", "common (4)", ""]
+    var testname: [String] = ["신형만", "봉미선", "짱구", "짱아", ""]
     
     override func viewDidLoad() {
         super.viewDidLoad()

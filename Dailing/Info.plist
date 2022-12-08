@@ -21,6 +21,7 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>BM-font-package/ttf/BMYEONSUNG_ttf.ttf</string>
 		<string>SpoqaHanSans/SpoqaHanSansNeo-Bold.ttf</string>
 		<string>inter-cufonfonts/Inter-Bold.otf</string>
 		<string>inter-cufonfonts/Inter-SemiBold.otf</string>

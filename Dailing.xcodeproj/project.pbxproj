@@ -44,6 +44,9 @@
 		EB488D222936255200AC0BE2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EB488D212936254B00AC0BE2 /* libxml2.tbd */; };
 		EB488D242936255D00AC0BE2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EB488D232936255800AC0BE2 /* libsqlite3.tbd */; };
 		EB488D4B293632E200AC0BE2 /* inter-cufonfonts in Resources */ = {isa = PBXBuildFile; fileRef = EB488D4A293632E200AC0BE2 /* inter-cufonfonts */; };
+		EB53BD9E2941B6170020E11E /* Dailing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB53BD9D2941B6170020E11E /* Dailing.storyboard */; };
+		EB53BDA12941B6500020E11E /* DailingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53BDA02941B6500020E11E /* DailingViewController.swift */; };
+		EB53BDA32941BB800020E11E /* BM-font-package in Resources */ = {isa = PBXBuildFile; fileRef = EB53BDA22941BB800020E11E /* BM-font-package */; };
 		EB5DC96B293A070B00384220 /* GetAllTodoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC96A293A070B00384220 /* GetAllTodoResponse.swift */; };
 		EB5DC96D293A076500384220 /* DailingURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC96C293A076500384220 /* DailingURL.swift */; };
 		EB5DC970293A0F1500384220 /* DailingLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5DC96F293A0F1500384220 /* DailingLog.swift */; };
@@ -136,6 +139,9 @@
 		EB488D212936254B00AC0BE2 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		EB488D232936255800AC0BE2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		EB488D4A293632E200AC0BE2 /* inter-cufonfonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "inter-cufonfonts"; sourceTree = "<group>"; };
+		EB53BD9D2941B6170020E11E /* Dailing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dailing.storyboard; sourceTree = "<group>"; };
+		EB53BDA02941B6500020E11E /* DailingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailingViewController.swift; sourceTree = "<group>"; };
+		EB53BDA22941BB800020E11E /* BM-font-package */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "BM-font-package"; sourceTree = "<group>"; };
 		EB5DC96A293A070B00384220 /* GetAllTodoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTodoResponse.swift; sourceTree = "<group>"; };
 		EB5DC96C293A076500384220 /* DailingURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailingURL.swift; sourceTree = "<group>"; };
 		EB5DC96F293A0F1500384220 /* DailingLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailingLog.swift; sourceTree = "<group>"; };
@@ -271,6 +277,14 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		EB53BD9F2941B62E0020E11E /* Dailing */ = {
+			isa = PBXGroup;
+			children = (
+				EB53BDA02941B6500020E11E /* DailingViewController.swift */,
+			);
+			path = Dailing;
+			sourceTree = "<group>";
+		};
 		EB5DC969293A06EF00384220 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +321,7 @@
 				EB8C4625293349E700FEEFD1 /* Calendar.storyboard */,
 				EB8C4620293349CC00FEEFD1 /* Map.storyboard */,
 				EB8C4622293349D500FEEFD1 /* Upload.storyboard */,
+				EB53BD9D2941B6170020E11E /* Dailing.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,6 +340,7 @@
 		EB8C461B293348F300FEEFD1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EB53BD9F2941B62E0020E11E /* Dailing */,
 				EB8C462F29334A4200FEEFD1 /* Cell */,
 				EB8C461F293349B900FEEFD1 /* Upload */,
 				EB8C461E293349AB00FEEFD1 /* Map */,
@@ -442,6 +458,7 @@
 		EBEE37E6293C6CD400069052 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				EB53BDA22941BB800020E11E /* BM-font-package */,
 				EBEE37E7293C6D5800069052 /* SpoqaHanSans */,
 				EB488D4A293632E200AC0BE2 /* inter-cufonfonts */,
 			);
@@ -518,6 +535,7 @@
 				EB488D012936249900AC0BE2 /* map_pin_shadow@3x.png in Resources */,
 				EB488D082936249900AC0BE2 /* map_pin_red.png in Resources */,
 				EB488D0D2936249900AC0BE2 /* noimage256.png in Resources */,
+				EB53BD9E2941B6170020E11E /* Dailing.storyboard in Resources */,
 				EB488D102936249900AC0BE2 /* map_present.png in Resources */,
 				EB8C4623293349D500FEEFD1 /* Upload.storyboard in Resources */,
 				EB488D032936249900AC0BE2 /* th_line.png in Resources */,
@@ -536,6 +554,7 @@
 				EBDC213229376779006D9B0D /* TodoTableViewCell.xib in Resources */,
 				EBB2404E2930A0C100C0F6C3 /* Assets.xcassets in Resources */,
 				EB488D112936249900AC0BE2 /* noimage.png in Resources */,
+				EB53BDA32941BB800020E11E /* BM-font-package in Resources */,
 				EBB2404C2930A0C000C0F6C3 /* AddUser.storyboard in Resources */,
 				EB488D122936249900AC0BE2 /* map_present_background_update.png in Resources */,
 				EBEE37E8293C6D5900069052 /* SpoqaHanSans in Resources */,
@@ -618,6 +637,7 @@
 				EB8C463929334E7500FEEFD1 /* Controller+Extenction.swift in Sources */,
 				EBB240472930A0C000C0F6C3 /* SceneDelegate.swift in Sources */,
 				EBCC9037293F39E000A6B54F /* SelectedDateResponse.swift in Sources */,
+				EB53BDA12941B6500020E11E /* DailingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

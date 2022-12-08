@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -62,7 +63,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3k1-lJ-WEz" userLabel="Month">
-                                <rect key="frame" x="29.999999999999996" y="56" width="59.666666666666657" height="27"/>
+                                <rect key="frame" x="40" y="56" width="59.666666666666657" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="QUS-6E-UFT"/>
                                 </constraints>
@@ -97,6 +98,18 @@
                                     <constraint firstAttribute="height" constant="284" id="mgH-O3-AU8"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toc-Ru-2ne">
+                                <rect key="frame" x="327" y="58.666666666666657" width="23" height="22"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadBtnPressed:" destination="DUF-Hw-ytN" eventType="touchUpInside" id="Upq-zi-un9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gRz-2U-oXI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -104,12 +117,13 @@
                             <constraint firstItem="5lm-9c-W8X" firstAttribute="trailing" secondItem="qKM-JW-jRk" secondAttribute="trailing" id="4VS-T3-0NH"/>
                             <constraint firstItem="3k1-lJ-WEz" firstAttribute="top" secondItem="qKM-JW-jRk" secondAttribute="top" constant="56" id="9qx-sz-thn"/>
                             <constraint firstItem="gRz-2U-oXI" firstAttribute="trailing" secondItem="trA-ac-5E8" secondAttribute="trailing" constant="29" id="APJ-CR-ksy"/>
+                            <constraint firstItem="toc-Ru-2ne" firstAttribute="centerY" secondItem="3k1-lJ-WEz" secondAttribute="centerY" id="G0z-mJ-HbH"/>
                             <constraint firstItem="qfD-n0-G2R" firstAttribute="top" secondItem="5lm-9c-W8X" secondAttribute="bottom" id="HYu-Qc-tQp"/>
                             <constraint firstItem="trA-ac-5E8" firstAttribute="top" secondItem="3k1-lJ-WEz" secondAttribute="bottom" constant="22" id="PVo-nF-Lci"/>
                             <constraint firstItem="5lm-9c-W8X" firstAttribute="leading" secondItem="gRz-2U-oXI" secondAttribute="leading" id="S1K-GM-7HW"/>
                             <constraint firstItem="5lm-9c-W8X" firstAttribute="top" secondItem="qKM-JW-jRk" secondAttribute="top" id="S9q-k6-UHT"/>
                             <constraint firstItem="qfD-n0-G2R" firstAttribute="top" secondItem="trA-ac-5E8" secondAttribute="bottom" constant="25" id="UMr-Sf-o4I"/>
-                            <constraint firstItem="3k1-lJ-WEz" firstAttribute="leading" secondItem="gRz-2U-oXI" secondAttribute="leading" constant="30" id="byn-eI-iEB"/>
+                            <constraint firstItem="3k1-lJ-WEz" firstAttribute="leading" secondItem="gRz-2U-oXI" secondAttribute="leading" constant="40" id="byn-eI-iEB"/>
                             <constraint firstItem="PiE-oU-BEd" firstAttribute="leading" secondItem="gRz-2U-oXI" secondAttribute="leading" id="crJ-k8-XEN"/>
                             <constraint firstItem="qfD-n0-G2R" firstAttribute="trailing" secondItem="gRz-2U-oXI" secondAttribute="trailing" id="euO-qG-OGq"/>
                             <constraint firstItem="qfD-n0-G2R" firstAttribute="leading" secondItem="gRz-2U-oXI" secondAttribute="leading" id="fTv-v6-chf"/>
@@ -117,6 +131,7 @@
                             <constraint firstItem="trA-ac-5E8" firstAttribute="leading" secondItem="gRz-2U-oXI" secondAttribute="leading" constant="29" id="mVd-b4-KOy"/>
                             <constraint firstItem="PiE-oU-BEd" firstAttribute="bottom" secondItem="gRz-2U-oXI" secondAttribute="bottom" id="ram-Eu-BpB"/>
                             <constraint firstItem="PiE-oU-BEd" firstAttribute="top" secondItem="qfD-n0-G2R" secondAttribute="bottom" id="sBg-Pq-KS8"/>
+                            <constraint firstAttribute="trailing" secondItem="toc-Ru-2ne" secondAttribute="trailing" constant="40" id="u5a-9w-a8a"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Re-mx-Ou1"/>
@@ -204,6 +219,7 @@
     <resources>
         <image name="back" width="473" height="512"/>
         <image name="back2" width="390" height="194"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

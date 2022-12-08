@@ -11,9 +11,9 @@ class TabBarVC: UITabBarController {
     
     // MARK: - Variable Part
     
-    var uploadButton: UIButton = {
+    var dailingButton: UIButton = {
         let button = UIButton()
-        button.setBackgroundImage(UIImage(named: "upload"), for: .normal)
+        button.setBackgroundImage(UIImage(named: "dailing"), for: .normal)
         button.addTarget(self, action: #selector(TabBarVC.buttonClicked(sender:)), for: .touchUpInside)
         return button
     }()
@@ -21,7 +21,7 @@ class TabBarVC: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonClicked(sender: uploadButton)
+        buttonClicked(sender: dailingButton)
         setTabBar()
         setupStyle()
     }
@@ -40,13 +40,13 @@ extension TabBarVC {
         
         
         //버튼 클릭 시 CameraVC 이동
-        let uploadStoryboard = UIStoryboard.init(name: "Upload", bundle: nil)
-        guard let uploadVC = uploadStoryboard.instantiateViewController(identifier: "UploadViewController") as? UploadViewController
+        let dailingStoryboard = UIStoryboard.init(name: "Dailing", bundle: nil)
+        guard let dailingVC = dailingStoryboard.instantiateViewController(identifier: "DailingViewController") as? DailingViewController
         else {
             return
         }
         //        uploadVC.modalPresentationStyle = .fullScreen
-        present(uploadVC, animated: true, completion: nil)
+        present(dailingVC, animated: true, completion: nil)
     }
     
     
@@ -83,9 +83,9 @@ extension TabBarVC {
         let posX: CGFloat = self.view.frame.width/2 - width/2
         let posY: CGFloat = -32
         
-        uploadButton.frame = CGRect(x: posX, y: posY, width: width, height: height)
+        dailingButton.frame = CGRect(x: posX, y: posY, width: width, height: height)
         
-        tabBar.addSubview(self.uploadButton)
+        tabBar.addSubview(self.dailingButton)
     }
     
 }
