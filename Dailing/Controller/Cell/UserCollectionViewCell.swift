@@ -11,7 +11,12 @@ import UIKit
 class UserCollectionViewCell: UICollectionViewCell {
     
     
-    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userImage: UIImageView! {
+        didSet {
+            userImage.layer.cornerRadius = 8
+            userImage.layer.masksToBounds = true
+        }
+    }
     @IBOutlet weak var userName: UILabel!
     
 }

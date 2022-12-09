@@ -24,9 +24,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="Gie-Gl-NYJ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="Gie-Gl-NYJ">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신형만님의 가족" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LG0-ek-dY8">
                                 <rect key="frame" x="36" y="52.000000000000007" width="163.66666666666666" height="31.333333333333336"/>
@@ -94,55 +93,50 @@
                                         <color key="textColor" red="1" green="0.5725490196078431" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQg-gN-tad">
-                                        <rect key="frame" x="23" y="31.666666666666686" width="36" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQg-gN-tad">
+                                        <rect key="frame" x="23" y="31.666666666666686" width="34" height="34"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="shO-Zb-QQA"/>
-                                            <constraint firstAttribute="width" constant="36" id="tye-tl-dYc"/>
+                                            <constraint firstAttribute="height" constant="34" id="shO-Zb-QQA"/>
+                                            <constraint firstAttribute="width" constant="34" id="tye-tl-dYc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="😭"/>
+                                        <state key="normal" image="1"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4I-7z-72J">
-                                        <rect key="frame" x="85" y="31.666666666666686" width="36" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4I-7z-72J">
+                                        <rect key="frame" x="83" y="31.666666666666686" width="34" height="34"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="36" id="elm-xA-jZa"/>
-                                            <constraint firstAttribute="height" constant="36" id="hhW-b0-qeQ"/>
+                                            <constraint firstAttribute="width" constant="34" id="elm-xA-jZa"/>
+                                            <constraint firstAttribute="height" constant="34" id="hhW-b0-qeQ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="😢"/>
+                                        <state key="normal" image="2"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekq-uT-zyp">
-                                        <rect key="frame" x="147" y="31.666666666666686" width="36" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekq-uT-zyp">
+                                        <rect key="frame" x="143" y="31.666666666666686" width="34" height="34"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="HV5-JS-db6"/>
-                                            <constraint firstAttribute="width" constant="36" id="Y9m-LP-V6f"/>
+                                            <constraint firstAttribute="height" constant="34" id="HV5-JS-db6"/>
+                                            <constraint firstAttribute="width" constant="34" id="Y9m-LP-V6f"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="🙂"/>
+                                        <state key="normal" image="3"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNh-LD-QQ9">
-                                        <rect key="frame" x="209" y="31.666666666666686" width="36" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNh-LD-QQ9">
+                                        <rect key="frame" x="203" y="31.666666666666686" width="34" height="34"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="7T5-kj-3Bt"/>
-                                            <constraint firstAttribute="width" constant="36" id="XaL-dY-1xb"/>
+                                            <constraint firstAttribute="height" constant="34" id="7T5-kj-3Bt"/>
+                                            <constraint firstAttribute="width" constant="34" id="XaL-dY-1xb"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="😃"/>
+                                        <state key="normal" image="4"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNr-ew-5iM">
-                                        <rect key="frame" x="271" y="31.666666666666686" width="36" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNr-ew-5iM">
+                                        <rect key="frame" x="263" y="31.666666666666686" width="34" height="34"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="aGw-zy-aCt"/>
-                                            <constraint firstAttribute="width" constant="36" id="kMK-GD-dEx"/>
+                                            <constraint firstAttribute="height" constant="34" id="aGw-zy-aCt"/>
+                                            <constraint firstAttribute="width" constant="34" id="kMK-GD-dEx"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="😍"/>
+                                        <state key="normal" image="5"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -212,12 +206,16 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pJY-eH-W3v" secondAttribute="trailing" constant="30" id="5JL-58-2oK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="v6e-So-Vls" secondAttribute="trailing" constant="30" id="5vA-2h-lif"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CWO-Ua-F48" secondAttribute="trailing" constant="30" id="AhO-uu-l2f"/>
+                            <constraint firstItem="Gie-Gl-NYJ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Chg-EQ-wog"/>
+                            <constraint firstItem="Gie-Gl-NYJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="CuD-As-uzQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UAh-6o-562" secondAttribute="trailing" constant="30" id="D2m-nT-wGN"/>
                             <constraint firstItem="v6e-So-Vls" firstAttribute="top" secondItem="UAh-6o-562" secondAttribute="bottom" constant="29" id="G53-8c-Jd5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Vnw-ZE-OBz" secondAttribute="trailing" constant="30" id="I7N-5Y-Uef"/>
+                            <constraint firstItem="Gie-Gl-NYJ" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="IWU-iD-INT"/>
                             <constraint firstItem="LG0-ek-dY8" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="52" id="Oyw-R5-Dio"/>
                             <constraint firstItem="pJY-eH-W3v" firstAttribute="top" secondItem="Vnw-ZE-OBz" secondAttribute="bottom" constant="36" id="Tf4-YU-E6h"/>
                             <constraint firstItem="LG0-ek-dY8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="36" id="Xv9-jG-3Jb"/>
+                            <constraint firstAttribute="bottom" secondItem="Gie-Gl-NYJ" secondAttribute="bottom" id="Yfp-uH-TuC"/>
                             <constraint firstItem="Vnw-ZE-OBz" firstAttribute="top" secondItem="v6e-So-Vls" secondAttribute="bottom" constant="29" id="gBQ-eU-4wP"/>
                             <constraint firstItem="UAh-6o-562" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="iWa-rx-CoY"/>
                             <constraint firstItem="Vnw-ZE-OBz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="nMi-1C-3nJ"/>
@@ -241,6 +239,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1" width="42" height="42"/>
+        <image name="2" width="34" height="34"/>
+        <image name="3" width="42" height="42"/>
+        <image name="4" width="34" height="34"/>
+        <image name="5" width="34" height="34"/>
         <image name="back" width="473" height="512"/>
         <image name="bong_g" width="74" height="78"/>
         <image name="g" width="274" height="58"/>

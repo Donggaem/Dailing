@@ -24,6 +24,8 @@ class TabBarVC: UITabBarController {
         buttonClicked(sender: dailingButton)
         setTabBar()
         setupStyle()
+        
+        
     }
     func setupStyle() {
         UITabBar.clearShadow()
@@ -39,13 +41,12 @@ extension TabBarVC {
     @objc func buttonClicked(sender : UIButton) {
         
         
-        //버튼 클릭 시 CameraVC 이동
+        //버튼 클릭 시 DailingVC 이동
         let dailingStoryboard = UIStoryboard.init(name: "Dailing", bundle: nil)
         guard let dailingVC = dailingStoryboard.instantiateViewController(identifier: "DailingViewController") as? DailingViewController
         else {
             return
         }
-        //        uploadVC.modalPresentationStyle = .fullScreen
         present(dailingVC, animated: true, completion: nil)
     }
     

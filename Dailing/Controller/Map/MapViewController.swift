@@ -7,30 +7,33 @@
 
 import UIKit
 import Alamofire
-import CoreLocation
 
 class MapViewController: UIViewController {
     
     @IBOutlet var subView: UIView!
     var mapView: MTMapView?
     
-    //위치
-    var locationManger = CLLocationManager()
-    var lat_now = 0.0
-    var lng_now = 0.0
+    private var selectedDate = ""
+    private var selectedList: [UserObject] = []
     
-//    var latitude : Double = 37.576568
-//    var longitude : Double = 127.029148
+    var testOneList: [PostObject] = []
+    var testTwoList: [PostObject] = []
+    var testThreeList: [PostObject] = []
+    var testFourList: [PostObject] = []
     
-//    var allCircle = [MTMapCircle]()
-    
-    var userList: [UserObject] = []
+    var postList: [PostObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setLocation()
         setMap()
-        createPin(itemName: "갱", getla: 37.45452977974912, getlo: 127.1277079253931, markerType: .redPin)
+        setUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setMap()
+        setUI()
+        postAPI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -40,20 +43,107 @@ class MapViewController: UIViewController {
         }
     }
     
-    //현재 위치
-    private func setLocation() {
-        // 델리게이트 설정
-        locationManger.delegate = self
-        // 거리 정확도 설정
-        locationManger.desiredAccuracy = kCLLocationAccuracyBest
+    private func setUI() {
+        //오늘날짜
+        let date = NSDate()
+        let toDayformatter = DateFormatter()
+        toDayformatter.dateFormat = "yyyy-MM-dd"
+        selectedDate = toDayformatter.string(from: date as Date)
+
+        
         
     }
     
-   
-}
+    private func postAPI() {
+        let today = selectedDate
+        let param = SelectedDateRequest(date: today)
+        
+        postSelectedDate(param)
+    }
     
+    
+    //MARK: - POST SELECTEDDATE
+    private func postSelectedDate(_ parameters: SelectedDateRequest){
+        AF.request(DailingURL.selectedDateURL, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)
+            .validate()
+            .responseDecodable(of: SelectedDateResponse.self) { [self] response in
+                switch response.result {
+                case .success(let response):
+                    if response.success == true {
+                        
+                        DailingLog.debug("postSelectedDate(Map) - Success")
+                        selectedList.removeAll()
+                        testOneList.removeAll()
+                        testTwoList.removeAll()
+                        testThreeList.removeAll()
+                        testFourList.removeAll()
+                        
+                        selectedList = response.data
+                        
+                        for index in 0..<selectedList.endIndex {
+                            
+                            if selectedList[index].userId == "신형만" {
+                                testOneList = selectedList[index].post
+                                
+                            } else if selectedList[index].userId == "봉미선" {
+                                testTwoList = selectedList[index].post
+                                
+                            }else if selectedList[index].userId == "짱구" {
+                                testThreeList = selectedList[index].post
+                                
+                            }else if selectedList[index].userId == "짱아" {
+                                testFourList = selectedList[index].post
+                                
+                            }
+                        }
+                        
+                        setPin()
+                        
+                    } else {
+                        DailingLog.error("postSelectedDate(Map) - fail")
+                        let loginFail_alert = UIAlertController(title: "실패", message: response.message, preferredStyle: UIAlertController.Style.alert)
+                        let okAction = UIAlertAction(title: "확인", style: .default)
+                        loginFail_alert.addAction(okAction)
+                        present(loginFail_alert, animated: false, completion: nil)
+                        
+                    }
+                case .failure(let error):
+                    DailingLog.error("postSelectedDate(Map) - err")
+                    print(error.localizedDescription)
+                    let loginFail_alert = UIAlertController(title: "실패", message: "서버 통신 실패", preferredStyle: UIAlertController.Style.alert)
+                    let okAction = UIAlertAction(title: "확인", style: .default)
+                    loginFail_alert.addAction(okAction)
+                    present(loginFail_alert, animated: false, completion: nil)
+                }
+            }
+    }
+    
+}
+
 //MARK: - EXTENSION MAP
 extension MapViewController: MTMapViewDelegate {
+    
+    func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
+        
+        let modalStoryboard = UIStoryboard.init(name: "Map", bundle: nil)
+        let modalVC = modalStoryboard.instantiateViewController(identifier: "ModalViewController") as? ModalViewController
+        modalVC?.modalPresentationStyle = .pageSheet
+        
+        if let sheet = modalVC?.sheetPresentationController {
+            
+            //지원할 크기 지정
+            sheet.detents = [.medium()]
+            
+        }
+        
+        modalVC?.paramtitle = postList[poiItem.tag].title
+        modalVC?.paramcontent = postList[poiItem.tag].content
+        modalVC?.paramimage = postList[poiItem.tag].image
+        
+        present(modalVC ?? UIViewController(), animated: true, completion: nil)
+        
+        return false
+    }
     
     func setMap() {
         // 지도 불러오기
@@ -64,70 +154,79 @@ extension MapViewController: MTMapViewDelegate {
             mapView.delegate = self
             // 지도의 타입 설정 - hybrid: 하이브리드, satellite: 위성지도, standard: 기본지도
             mapView.baseMapType = .standard
-
+            
             
             // 현재 위치 트래킹
             mapView.showCurrentLocationMarker = true
             mapView.currentLocationTrackingMode = .onWithoutHeading
-                        
+            
             self.view.addSubview(mapView)
         }
     }
     
-    // poiItem 클릭 이벤트
-    func mapView(_ mapView: MTMapView!, touchedCalloutBalloonOf poiItem: MTMapPOIItem!) {
-        // 인덱스는 poiItem의 태그로 접근
-        let index = poiItem.tag
-    }
-    
-    func createPin(itemName: String, getla: Double, getlo: Double, markerType: MTMapPOIItemMarkerType) -> MTMapPOIItem{
-        
-        let poiltem = MTMapPOIItem()
-        poiltem.itemName = itemName
-        poiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: getla, longitude: getlo))
-        poiltem.markerType = markerType
-        mapView!.addPOIItems([poiltem])
-        poiltem.tag = 1
-        
-        return poiltem
-    }
-}
-
-//MARK: - EXTENSION LOCTION
-extension MapViewController: CLLocationManagerDelegate {
-    
-    //위치 권한 함수
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .authorizedAlways,.authorizedWhenInUse:
-            print("GPS 권한이 설정됨")
-            locationManger.startUpdatingLocation() //위치 정보 받아오기 시작
-        case .restricted,.notDetermined:
-            print("GPS 권한이 설정되지않음")
-            self.locationManger.requestWhenInUseAuthorization()
-        case .denied:
-            print("GPS 권한이 요청 거부됨")
-            self.locationManger.requestWhenInUseAuthorization()
-        default:
-            print("GPS: Default")
+    func setPin() {
+        var cnt = 0
+        postList.removeAll()
+        for index in 0..<selectedList.endIndex {
+            if selectedList[index].userId == "신형만" {
+                for item in testOneList{
+                    let poiltem = MTMapPOIItem()
+                    poiltem.itemName = "신형만"
+                    poiltem.markerType = .customImage
+                    poiltem.customImageName = "pin1"
+                    poiltem.markerSelectedType = .customImage
+                    poiltem.customSelectedImageName = "pin1_1"
+                    poiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: item.lat, longitude: item.lng))
+                    poiltem.tag = cnt
+                    mapView!.addPOIItems([poiltem])
+                    postList.append(item)
+                    cnt += 1
+                }
+                
+            } else if selectedList[index].userId == "봉미선" {
+                for item in testTwoList{
+                    let poiltem = MTMapPOIItem()
+                    poiltem.itemName = "봉미선"
+                    poiltem.markerType = .customImage
+                    poiltem.customImageName = "pin2"
+                    poiltem.markerSelectedType = .customImage
+                    poiltem.customSelectedImageName = "pin2_2"
+                    poiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: item.lat, longitude: item.lng))
+                    poiltem.tag = cnt
+                    mapView!.addPOIItems([poiltem])
+                    postList.append(item)
+                    cnt += 1
+                }
+            }else if selectedList[index].userId == "짱구" {
+                for item in testThreeList{
+                    let poiltem = MTMapPOIItem()
+                    poiltem.itemName = "짱구"
+                    poiltem.markerType = .customImage
+                    poiltem.customImageName = "pin3"
+                    poiltem.markerSelectedType = .customImage
+                    poiltem.customSelectedImageName = "pin3_3"
+                    poiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: item.lat, longitude: item.lng))
+                    poiltem.tag = cnt
+                    mapView!.addPOIItems([poiltem])
+                    postList.append(item)
+                    cnt += 1
+                }
+            }else if selectedList[index].userId == "짱아" {
+                for item in testOneList{
+                    let poiltem = MTMapPOIItem()
+                    poiltem.itemName = "짱아"
+                    poiltem.markerType = .customImage
+                    poiltem.customImageName = "pin4"
+                    poiltem.markerSelectedType = .customImage
+                    poiltem.customSelectedImageName = "pin4_4"
+                    poiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: item.lat, longitude: item.lng))
+                    poiltem.tag = cnt
+                    mapView!.addPOIItems([poiltem])
+                    postList.append(item)
+                    cnt += 1
+                }
+            }
         }
     }
     
-    // 위치 정보 계속 업데이트 -> 위도 경도 받아옴
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        print("didUpdateLocations")
-        if let location = locations.first {
-//            print("위도: \(location.coordinate.latitude)")
-//            print("경도: \(location.coordinate.longitude)")
-
-            lat_now = location.coordinate.latitude
-            lng_now = location.coordinate.longitude
-
-        }
-    }
-
-    // 위도 경도 받아오기 에러
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
-    }
 }

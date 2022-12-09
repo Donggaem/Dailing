@@ -18,8 +18,9 @@ class DailingViewController: UIViewController {
     }
     @IBOutlet var pagerView: FSPagerView!{
         didSet {
-            self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+//            self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
 
+            self.pagerView.register(UINib(nibName:"QuestionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "QuestionViewCell")
             self.pagerView.itemSize = CGSize(width: 273, height: 118)
             self.pagerView.transformer = FSPagerViewTransformer(type: .overlap)
             self.pagerView.layer.cornerRadius = 20
@@ -31,6 +32,9 @@ class DailingViewController: UIViewController {
     @IBOutlet var fbondingView: UIView!
     
     var images = ["question09", "question10", "question11", "question12"]
+    var questiontitle = ["질문. 9", "질문. 10", "질문. 11", "질문. 12"]
+    var question = ["가족과 함께 가고싶은 여행지는 어디인가요?", "가족이 가장 뭉클했던 날은 언제인가요?", "오늘 하루 가장 기분 좋은 일은 무엇인가요?", "가족이 가장 든든했더 날은 언제인가요?"]
+    var date = ["#December 09. 2022","#December 09. 2022","#December 09. 2022","#December 09. 2022"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,8 +83,12 @@ extension DailingViewController: FSPagerViewDataSource, FSPagerViewDelegate {
     
     //각셀에 대한 설정
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
-        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-        cell.imageView?.image = UIImage(named: images[index])
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "QuestionViewCell", at: index) as! QuestionViewCell
+       
+        cell.questiontitle.text = questiontitle[index]
+        cell.question.text = question[index]
+        cell.questiondate.text = date[index]
+        
         return cell
     }
 }

@@ -191,6 +191,7 @@ class CalendarViewController: UIViewController {
                             
                             if selectedList[index].userId == "신형만" {
                                 testOneList = selectedList[index].post
+                                
                             } else if selectedList[index].userId == "봉미선" {
                                 testTwoList = selectedList[index].post
                                 
@@ -279,15 +280,12 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate{
             }else if indexPath.section == 1 {
                 downcell.todoTitle.text = testTwoList[indexPath.row].title
                 downcell.todoContent.text = testTwoList[indexPath.row].content
-
             }else if indexPath.section == 2 {
                 downcell.todoTitle.text = testThreeList[indexPath.row].title
                 downcell.todoContent.text = testThreeList[indexPath.row].content
-
             }else if indexPath.section == 3 {
                 downcell.todoTitle.text = testFourList[indexPath.row].title
                 downcell.todoContent.text = testFourList[indexPath.row].content
-
             }
             return downcell
             
@@ -300,28 +298,28 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate{
             if indexPath.section == 0 {
                 upcell.todoTitle.text = testOneList[indexPath.row].title
                 upcell.todoContent.text = testOneList[indexPath.row].content
-                
+
                 let url = URL(string: testOneList[indexPath.row].image)
                 upcell.todoImg.kf.setImage(with: url)
 
             }else if indexPath.section == 1 {
                 upcell.todoTitle.text = testTwoList[indexPath.row].title
                 upcell.todoContent.text = testTwoList[indexPath.row].content
-                
+
                 let url = URL(string: testTwoList[indexPath.row].image)
                 upcell.todoImg.kf.setImage(with: url)
 
             }else if indexPath.section == 2 {
                 upcell.todoTitle.text = testThreeList[indexPath.row].title
                 upcell.todoContent.text = testThreeList[indexPath.row].content
-                
+
                 let url = URL(string: testThreeList[indexPath.row].image)
                 upcell.todoImg.kf.setImage(with: url)
 
             }else if indexPath.section == 3 {
                 upcell.todoTitle.text = testFourList[indexPath.row].title
                 upcell.todoContent.text = testFourList[indexPath.row].content
-                
+
                 let url = URL(string: testThreeList[indexPath.row].image)
                 upcell.todoImg.kf.setImage(with: url)
 

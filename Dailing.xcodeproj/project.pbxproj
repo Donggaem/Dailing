@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8AAEA1A11C43E41CFAB5A75B /* Pods_Dailing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E35B5983024C95207E95355 /* Pods_Dailing.framework */; };
+		EB47741429435D720084ED72 /* QuestionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB47741329435D720084ED72 /* QuestionViewCell.xib */; };
+		EB47741629435F7C0084ED72 /* QuestionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB47741529435F7C0084ED72 /* QuestionViewCell.swift */; };
 		EB488CFA2936249900AC0BE2 /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB488CD52936249900AC0BE2 /* map_pinup_custom@3x.png */; };
 		EB488CFB2936249900AC0BE2 /* map_pin_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = EB488CD62936249900AC0BE2 /* map_pin_custom.png */; };
 		EB488CFC2936249900AC0BE2 /* shadow_balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB488CD72936249900AC0BE2 /* shadow_balloon.png */; };
@@ -69,6 +71,7 @@
 		EBB240512930A0C100C0F6C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB2404F2930A0C100C0F6C3 /* LaunchScreen.storyboard */; };
 		EBCC9035293F39D200A6B54F /* SelectedDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC9034293F39D200A6B54F /* SelectedDateRequest.swift */; };
 		EBCC9037293F39E000A6B54F /* SelectedDateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC9036293F39E000A6B54F /* SelectedDateResponse.swift */; };
+		EBD320E029431F2B0053B403 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD320DF29431F2B0053B403 /* ModalViewController.swift */; };
 		EBDC213029373910006D9B0D /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDC212F29373910006D9B0D /* TabBarVC.swift */; };
 		EBDC213229376779006D9B0D /* TodoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBDC213129376779006D9B0D /* TodoTableViewCell.xib */; };
 		EBDC213429376AB8006D9B0D /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDC213329376AB8006D9B0D /* TodoTableViewCell.swift */; };
@@ -94,6 +97,8 @@
 		44B37E297A9DFE60987D0684 /* Pods-Dailing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dailing.release.xcconfig"; path = "Target Support Files/Pods-Dailing/Pods-Dailing.release.xcconfig"; sourceTree = "<group>"; };
 		4E35B5983024C95207E95355 /* Pods_Dailing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dailing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8F6D301ECA78E4620BD97D /* Pods-Dailing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dailing.debug.xcconfig"; path = "Target Support Files/Pods-Dailing/Pods-Dailing.debug.xcconfig"; sourceTree = "<group>"; };
+		EB47741329435D720084ED72 /* QuestionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewCell.xib; sourceTree = "<group>"; };
+		EB47741529435F7C0084ED72 /* QuestionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewCell.swift; sourceTree = "<group>"; };
 		EB488CD52936249900AC0BE2 /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
 		EB488CD62936249900AC0BE2 /* map_pin_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_custom.png; sourceTree = "<group>"; };
 		EB488CD72936249900AC0BE2 /* shadow_balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow_balloon.png; sourceTree = "<group>"; };
@@ -166,6 +171,7 @@
 		EBB240522930A0C100C0F6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBCC9034293F39D200A6B54F /* SelectedDateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDateRequest.swift; sourceTree = "<group>"; };
 		EBCC9036293F39E000A6B54F /* SelectedDateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDateResponse.swift; sourceTree = "<group>"; };
+		EBD320DF29431F2B0053B403 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		EBDC212F29373910006D9B0D /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		EBDC213129376779006D9B0D /* TodoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTableViewCell.xib; sourceTree = "<group>"; };
 		EBDC213329376AB8006D9B0D /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
@@ -371,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				EB8C462B29334A3000FEEFD1 /* MapViewController.swift */,
+				EBD320DF29431F2B0053B403 /* ModalViewController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -389,6 +396,7 @@
 				EB8C463029334BB800FEEFD1 /* UserCollectionViewCell.xib */,
 				EBDC213129376779006D9B0D /* TodoTableViewCell.xib */,
 				EBF8A7B529387B4200207F84 /* TodoImgTableViewCell.xib */,
+				EB47741329435D720084ED72 /* QuestionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -399,6 +407,7 @@
 				EB8C463629334CF500FEEFD1 /* UserCollectionViewCell.swift */,
 				EBDC213329376AB8006D9B0D /* TodoTableViewCell.swift */,
 				EBF8A7B729387B5500207F84 /* TodoImgTableViewCell.swift */,
+				EB47741529435F7C0084ED72 /* QuestionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -529,6 +538,7 @@
 			files = (
 				EB488CFD2936249900AC0BE2 /* map_pinup.png in Resources */,
 				EB488CFA2936249900AC0BE2 /* map_pinup_custom@3x.png in Resources */,
+				EB47741429435D720084ED72 /* QuestionViewCell.xib in Resources */,
 				EB8C4626293349E700FEEFD1 /* Calendar.storyboard in Resources */,
 				EB488CFB2936249900AC0BE2 /* map_pin_custom.png in Resources */,
 				EB8C463129334BB800FEEFD1 /* UserCollectionViewCell.xib in Resources */,
@@ -628,6 +638,7 @@
 				EBB240452930A0C000C0F6C3 /* AppDelegate.swift in Sources */,
 				EBDC213029373910006D9B0D /* TabBarVC.swift in Sources */,
 				EB5DC970293A0F1500384220 /* DailingLog.swift in Sources */,
+				EB47741629435F7C0084ED72 /* QuestionViewCell.swift in Sources */,
 				EBF8A7B829387B5500207F84 /* TodoImgTableViewCell.swift in Sources */,
 				EB8D24D6293D79C7002E260A /* UploadRequest.swift in Sources */,
 				EB5DC96B293A070B00384220 /* GetAllTodoResponse.swift in Sources */,
@@ -635,6 +646,7 @@
 				EB8C462C29334A3000FEEFD1 /* MapViewController.swift in Sources */,
 				EB8C463B293353C500FEEFD1 /* AddUserViewController.swift in Sources */,
 				EB8C463929334E7500FEEFD1 /* Controller+Extenction.swift in Sources */,
+				EBD320E029431F2B0053B403 /* ModalViewController.swift in Sources */,
 				EBB240472930A0C000C0F6C3 /* SceneDelegate.swift in Sources */,
 				EBCC9037293F39E000A6B54F /* SelectedDateResponse.swift in Sources */,
 				EB53BDA12941B6500020E11E /* DailingViewController.swift in Sources */,

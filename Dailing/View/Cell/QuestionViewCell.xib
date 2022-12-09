@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="BMYEONSUNG_ttf.ttf">
+            <string>BMYEONSUNG</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="QuestionViewCell" id="6Yi-nF-bIu" customClass="QuestionViewCell" customModule="Dailing" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="273" height="118"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="question" translatesAutoresizingMaskIntoConstraints="NO" id="wUS-pv-CFq">
+                    <rect key="frame" x="0.0" y="0.0" width="273" height="118"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1I-hy-HMb">
+                    <rect key="frame" x="116.99999999999999" y="60.999999999999993" width="39.333333333333329" height="18.666666666666664"/>
+                    <fontDescription key="fontDescription" name="BMYEONSUNG" family="BM YEONSUNG" pointSize="16"/>
+                    <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfa-s3-1I7">
+                    <rect key="frame" x="112" y="21" width="49" height="24"/>
+                    <fontDescription key="fontDescription" name="BMYEONSUNG" family="BM YEONSUNG" pointSize="20"/>
+                    <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoj-D2-vMA">
+                    <rect key="frame" x="232.33333333333334" y="95.666666666666671" width="24.666666666666657" height="12"/>
+                    <fontDescription key="fontDescription" name="BMYEONSUNG" family="BM YEONSUNG" pointSize="10"/>
+                    <color key="textColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="rL3-iw-qay"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="a1I-hy-HMb" firstAttribute="centerX" secondItem="6Yi-nF-bIu" secondAttribute="centerX" id="5As-2Q-LVI"/>
+                <constraint firstItem="rL3-iw-qay" firstAttribute="trailing" secondItem="Uoj-D2-vMA" secondAttribute="trailing" constant="16" id="8AR-Ub-E5b"/>
+                <constraint firstAttribute="trailing" secondItem="wUS-pv-CFq" secondAttribute="trailing" id="Ajl-TX-cgA"/>
+                <constraint firstItem="zfa-s3-1I7" firstAttribute="centerX" secondItem="6Yi-nF-bIu" secondAttribute="centerX" id="EJm-8V-yNP"/>
+                <constraint firstItem="a1I-hy-HMb" firstAttribute="top" secondItem="zfa-s3-1I7" secondAttribute="bottom" constant="16" id="GsW-gD-qCL"/>
+                <constraint firstAttribute="bottom" secondItem="wUS-pv-CFq" secondAttribute="bottom" id="OyA-wd-YD6"/>
+                <constraint firstItem="wUS-pv-CFq" firstAttribute="leading" secondItem="rL3-iw-qay" secondAttribute="leading" id="deD-2H-uHQ"/>
+                <constraint firstItem="Uoj-D2-vMA" firstAttribute="top" secondItem="a1I-hy-HMb" secondAttribute="bottom" constant="16" id="oGS-By-0l5"/>
+                <constraint firstItem="zfa-s3-1I7" firstAttribute="top" secondItem="6Yi-nF-bIu" secondAttribute="top" constant="21" id="vtT-Wp-Y3z"/>
+                <constraint firstItem="wUS-pv-CFq" firstAttribute="top" secondItem="6Yi-nF-bIu" secondAttribute="top" id="zcf-DF-4mK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="question" destination="a1I-hy-HMb" id="FGV-qJ-FPw"/>
+                <outlet property="questiondate" destination="Uoj-D2-vMA" id="b5t-Jp-O7A"/>
+                <outlet property="questiontitle" destination="zfa-s3-1I7" id="bzP-UL-j7L"/>
+            </connections>
+            <point key="canvasLocation" x="127.48091603053435" y="3.8732394366197185"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="question" width="273" height="118"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

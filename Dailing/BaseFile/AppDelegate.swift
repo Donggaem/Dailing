@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //탭바설정
         UITabBar.appearance().tintColor = UIColor(red: 0.258, green: 0.258, blue: 0.258, alpha: 1)
 
+        //런치스크린 시간조정
+        sleep(1)
+        
         //키보드 설정
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true

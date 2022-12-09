@@ -22,7 +22,7 @@ struct UserObject: Decodable {
     var post: [PostObject]
 }
 
-struct PostObject: Decodable {
+struct PostObject: Decodable{
    
     var uuid: String
     var title: String
